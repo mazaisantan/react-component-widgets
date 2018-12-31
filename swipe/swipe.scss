@@ -1,0 +1,46 @@
+.swipe-container{ 
+  background-color: #E3DEDC;
+  width:70vw;
+  .swipe-header{
+    display:flex;
+    background-color: #BFB8B1;
+    height:25px;
+    div{
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content: center;
+      border-bottom:thick solid #E3DEDC;
+    }
+    .select{
+      color:#826558;
+      border-bottom:thick solid #826558;
+    }
+  }
+  .swipe-body{  
+    $bodyHeight:150px;
+
+    color:#C2A9AD;
+    height:$bodyHeight;
+    overflow:hidden;
+    position:relative;
+    div{
+    height:$bodyHeight;
+    position:absolute
+    } 
+  }
+  .swipe-footer{
+    display:flex;
+    justify-content:center;
+    div{
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background-color: white;
+      margin:5px;
+    }
+    .select{
+      background-color:#C2A9AD;
+    }
+  }
+}

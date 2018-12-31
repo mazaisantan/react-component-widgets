@@ -1,0 +1,22 @@
+.star-container{
+    position:relative;
+    display:inline-block;
+    .star-unselected{
+        span{
+            &::before{
+                color:gray;
+            }
+        }
+    }
+    .star-selected{
+        position:absolute;
+        top:0;
+        left:0;
+        overflow:hidden;
+        span{
+            &::before{
+                color:red;
+            }
+        }
+    }
+}

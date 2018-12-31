@@ -1,0 +1,36 @@
+.wait-circle{
+	.circle1{
+		width: 100px; height: 100px;
+		text-indent: 999px; overflow: hidden; /* Hide text */
+		background: url(./loader.png) 0 0;
+		animation: loader 1s infinite steps(8);
+	}
+	.icon-spinner2{
+		font-size: 100px;
+		width:100px;
+		height:100px;
+		animation: spin 2s linear infinite;
+	}  
+	.icon-spinner3{
+		font-size: 100px;
+		width:100px;
+		height:100px;
+		animation: spin1 1s infinite steps(12);
+	}  
+}
+
+@keyframes loader {
+	to { background-position: -800px 0; }
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin1 {
+    to{
+		transform: rotate(360deg);
+	}
+}

@@ -1,0 +1,25 @@
+.simple-item{
+    border-top:1px solid gray;
+    .item-header{
+        span{
+            display:inline-block;
+            margin:10px;
+            font-size:18px;
+        }
+        .time{
+            border:1px solid blue;
+            color:blue;
+        }
+    }
+    .item-body{
+        p{
+            margin:10px;
+        }
+    }
+    .item-footer{
+        span{
+            margin:10px;
+            color:gray;
+        }
+    }
+}

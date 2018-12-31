@@ -1,0 +1,33 @@
+@keyframes spin {
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes spin-reverse {
+    from {
+        transform: rotate(1turn)
+    }
+}
+
+.simpleSpin {
+    overflow: hidden;
+    width: 300px; height: 300px;
+    padding: 70px;
+    border-radius: 50%;
+    background: #fb3;
+    box-sizing: content-box;
+    .avatar {
+        position:absolute;
+        width: 100px;height:100px;
+        border-radius: 50%;
+        animation: spin 20s infinite linear;
+        transform-origin: 150px 150px;
+        img{
+            width: 100px;height:100px;
+            border-radius: 50%;
+            animation: spin-reverse 20s infinite linear;
+            transform-origin: 50% 50%;
+        }
+    }
+}

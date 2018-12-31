@@ -1,0 +1,43 @@
+.fadeInOverlay {
+  position: relative;
+  width: 50%;
+  img{
+    position:relative;/*注意这里不能是absolute，否则无动画*/
+    z-index:20;
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #008CBA;
+  }
+  .overlay {
+    position: absolute;
+    z-index:100;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #008CBA;
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+  }
+  &:hover{
+    .overlay {
+      bottom: 0;
+      height: 100%;
+    }
+  }
+
+  .text {
+    white-space: nowrap;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+}
+
