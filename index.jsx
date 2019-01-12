@@ -1,3 +1,4 @@
+// import './react-md.indigo-pink.min.css'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Star from './star/star.jsx'
@@ -24,13 +25,17 @@ import SimpleItem from './simpleItem/simpleItem.jsx'
 import SimpleList from './simpleList/simpleList.jsx'
 import SimplePosition from './simplePosition/simplePosition.jsx'
 import WaitCircle from './waitCircle/waitCircle.jsx'
-import Chart from './chart/chart.jsx'
+import SimpleDendrogramChart from './chart/simpleDendrogramChart.jsx'
+import SimpleAreaChart from './chart/simpleAreaChart.jsx'
+import SimpleCurveChart from './chart/simpleCurveChart.jsx'
 import Bounce from './bounce/bounce.jsx'
 import ScrollToTop from './scrollToTop/scrollToTop.jsx'
 import ScrollLoading from './scrollLoading/scrollLoading.jsx'
 import Border1px from './border1px/border1px.jsx'
 import Billboard from './billboard/billboard.jsx'
 import Todos from './todos/index.jsx'
+import OrientationExamples from './datePicker/datePicker.jsx'
+
 
 
 // var root = document.getElementById("example");
@@ -189,6 +194,7 @@ ReactDOM.render(
     <Border1px/>,
     root.appendChild(document.createElement("div"))
 );  */
+
 var allComponent = {  
     // React_Swipe,
     
@@ -196,8 +202,11 @@ var allComponent = {
     Bounce,
     Card,
     Category,
-    Chart,
+    SimpleDendrogramChart,
+    SimpleCurveChart,
+    SimpleAreaChart,
     Dropdown,
+    OrientationExamples,
     FadeInOverlay,
     ImageText,
     Login,

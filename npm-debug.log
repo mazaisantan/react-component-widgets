@@ -4,6 +4,7 @@
 1 verbose cli   '--userconfig=C:\\Users\\mazai\\.cnpmrc',
 1 verbose cli   '--disturl=https://npm.taobao.org/mirrors/node',
 1 verbose cli   '--registry=https://registry.npm.taobao.org',
+1 verbose cli   'run',
 1 verbose cli   'start' ]
 2 info using npm@3.10.10
 3 info using node@v10.11.0
@@ -21,7 +22,7 @@
 12 verbose stack     at process.emit (events.js:187:15)
 13 verbose cwd X:\User\前端\Project\Components
 14 error Windows_NT 10.0.14393
-15 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\mazai\\AppData\\Roaming\\npm\\node_modules\\cnpm\\node_modules\\npm\\bin\\npm-cli.js" "--userconfig=C:\\Users\\mazai\\.cnpmrc" "--disturl=https://npm.taobao.org/mirrors/node" "--registry=https://registry.npm.taobao.org" "start"
+15 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\mazai\\AppData\\Roaming\\npm\\node_modules\\cnpm\\node_modules\\npm\\bin\\npm-cli.js" "--userconfig=C:\\Users\\mazai\\.cnpmrc" "--disturl=https://npm.taobao.org/mirrors/node" "--registry=https://registry.npm.taobao.org" "run" "start"
 16 error node v10.11.0
 17 error npm  v3.10.10
 18 error code ENOSYS

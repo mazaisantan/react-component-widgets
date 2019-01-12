@@ -8,7 +8,7 @@ import Line from './linePath/linePath.jsx'
 import Bar from './bar/bar.jsx'
 import Pie from './pie/pie.jsx'
 import D3SimpleDendrogramChart from './D3SimpleDendrogramChart/D3SimpleDendrogramChart.jsx'
-import './chart.scss';
+import './simpleDendrogramChart.scss';
 
 const data =  {
     name: '某工程设计集团网站主页',
@@ -282,7 +282,7 @@ const data =  {
 
 };
 
-class Chart extends React.Component {
+class SimpleDendrogramChart extends React.Component {
     constructor(props){
         super(props);    
     }
@@ -293,15 +293,12 @@ class Chart extends React.Component {
         return (
             <div>
                 <D3SimpleDendrogramChart data={data}/>
-                <svg className="chart-container">
-                    <Pie/>
-                </svg>
             </div>
         )
     }
 }
 
-Chart.propTypes = {
+SimpleDendrogramChart.propTypes = {
 
 }
-export default Chart
+export default SimpleDendrogramChart

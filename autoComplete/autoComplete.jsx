@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Fuse from 'fuse.js';
 import { Autocomplete} from 'react-md';
-import './autoComplete.css';
+// import './autoComplete.css';
 
 
 export default class MenuAutocomplete extends React.Component {
