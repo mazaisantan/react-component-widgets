@@ -35,181 +35,29 @@ import Border1px from './border1px/border1px.jsx'
 import Billboard from './billboard/billboard.jsx'
 import Todos from './todos/index.jsx'
 import OrientationExamples from './datePicker/datePicker.jsx'
+import SideBarWrapper from './sideBar/sideBar.jsx'
+import LinePath from './chart/linePath/linePath.jsx'
+import curveLinePath from './chart/curveLinePath/curveLinePath.jsx'
+import SimpleBarChart from './chart/simpleBarChart.jsx'
+import InputField from './inputField/inputField.jsx'
+import HoverNav from './hoverNav/hoverNav.jsx'
 
-
-
-// var root = document.getElementById("example");
-
-// ReactDOM.render(
-//     <Star rate={4.7}/>,
-//     root.appendChild(document.createElement("div"))
-// );
-
-/* ReactDOM.render(
-    <ProfileCard/>,
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <Card/>,
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <Dropdown/>,
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <Taps/>,
-    root.appendChild(document.createElement("div"))
-);
- */
-/*  ReactDOM.render(
-    <ImageText/>,
-    root.appendChild(document.createElement("div"))
-);  */
-
-/* ReactDOM.render(
-    <Category/>,
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <MenuContext style={{position:relative}}/>,
-    root.appendChild(document.createElement("div"))
-);  */
-
-/* ReactDOM.render(
-    <ModalDialog/>,
-    root.appendChild(document.createElement("div"))
-);
- */
-
-/* ReactDOM.render(
-    <NavBar/>,
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <React_Swipe>
-        <div title="1">11xx1</div>
-        <div title="2">22222</div>
-        <div title="3">333333</div>
-    </React_Swipe>, 
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <MenuAutocomplete/>,
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <SignUp/>,
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <Login/>,
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <SlideShow>
-        <img src={require("./img_nature_wide.jpg")} alt='Caption Text' style={{width:'100%'}}/>
-        <img src={require("./img_fjords_wide.jpg")} alt='Caption Two' style={{width:'100%'}}/>
-        <img src={require("./img_mountains_wide.jpg")} alt='Caption Three' style={{width:'100%'}}/>
-    </SlideShow>,
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <SimpleChart/>,
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <SimpleDialog/>,
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <FadeInOverlay/>,
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <SimpleSpin/>,
-    root.appendChild(document.createElement("div"))
-); */
-
-/* ReactDOM.render(
-    <NavNumber/>,
-    root.appendChild(document.createElement("div"))
-);
- */
-/* ReactDOM.render(
-    <SimpleItem/>,
-    root.appendChild(document.createElement("div"))
-);
-
-ReactDOM.render(
-    <SimpleList/>,
-    root.appendChild(document.createElement("div"))
-);
-
-ReactDOM.render(
-    <SimplePosition/>,
-    root.appendChild(document.createElement("div"))
-);
-
-ReactDOM.render(
-    <WaitCircle/>,
-    root.appendChild(document.createElement("div"))
-);
-
-ReactDOM.render(
-    <Chart/>,
-    root.appendChild(document.createElement("div"))
-);
-
-ReactDOM.render(
-    <Bounce/>,
-    root.appendChild(document.createElement("div"))
-);
-
-
- ReactDOM.render(
-    <ScrollToTop/>,
-    root.appendChild(document.createElement("div"))
-); 
-
-ReactDOM.render(
-    <ScrollLoading/>,
-    root.appendChild(document.createElement("div"))
-); 
-
-ReactDOM.render(
-    <Border1px/>,
-    root.appendChild(document.createElement("div"))
-);  */
 
 var allComponent = {  
     // React_Swipe,
-    
     Border1px,
     Bounce,
     Card,
     Category,
-    SimpleDendrogramChart,
-    SimpleCurveChart,
-    SimpleAreaChart,
+    curveLinePath,
+    HoverNav,
     Dropdown,
     OrientationExamples,
     FadeInOverlay,
     ImageText,
+    InputField,
     Login,
+    LinePath,
     MenuAutocomplete,
     MenuContext,
     ModalDialog,
@@ -221,10 +69,15 @@ var allComponent = {
     SimpleItem,
     SimpleList,
     SimplePosition,
+    SimpleBarChart,
     SimpleChart,
     SimpleDialog,
     SimpleSpin,
+    SimpleDendrogramChart,
+    SimpleCurveChart,
+    SimpleAreaChart,
     SignUp,
+    SideBarWrapper,
     SlideShowWrapper,
     Star,
     ScrollLoading,

@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import './linePath.scss';
+import './curveLinePath.scss';
+import {line,monotoneX} from '../utils/curveLine.js'
 
-class LinePath extends React.Component {
+class CurveLinePath extends React.Component {
     constructor(props){
         super(props);  
         const autoScale = true;
@@ -32,6 +33,11 @@ class LinePath extends React.Component {
             ]
         }    
         this.dataToPosition();
+        this.line = line()
+            .curve(monotoneX)
+            .x(function (d) { return d.x })
+            .y(function (d) { return d.y });
+        this.path = this.line(this.state.position)
     }
 
     dataToPosition(){
@@ -39,7 +45,7 @@ class LinePath extends React.Component {
         let scale = this.axis.scale; 
         this.axis.data.map((item,index)=>{
             this.state.position[index].x = (item.x - scale.horizontal[0])*(length.horizontal)/(scale.horizontal[1]-scale.horizontal[0]);
-            this.state.position[index].y = (item.y - scale.vertical[0])*(length.vertical)/(scale.vertical[1]-scale.vertical[0]);
+            this.state.position[index].y = this.axis.length.vertical-(item.y - scale.vertical[0])*(length.vertical)/(scale.vertical[1]-scale.vertical[0]);
         })
     }
 
@@ -62,17 +68,17 @@ class LinePath extends React.Component {
             {
                 this.state.position.map((item,index)=>{
                     let circle = React.createElement('circle',{fill:'orange',r:'2'});
-                    return React.createElement('g',{className:'position',transform:'translate('+item.x+','+(this.axis.length.vertical-item.y)+')'},circle)
+                    return React.createElement('g',{className:'position',transform:'translate('+item.x+','+(item.y)+')'},circle)
                 })
             } 
-                <path className='line' stroke='red' fill='none' d={this.getLinePathStr()}></path>   
+                <path className='line' stroke='red' fill='none' d={this.path}></path>   
             </g>
         </svg>
         )
     }
 }
 
-LinePath.propTypes = {
+CurveLinePath.propTypes = {
 
 }
-export default LinePath
+export default CurveLinePath

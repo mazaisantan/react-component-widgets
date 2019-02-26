@@ -10,7 +10,9 @@ class Bounce extends React.Component {
     render() {
         return (
         <div className="bounce-container">
-            <div className="ball">
+            <div className="ball-shake">
+            </div>
+            <div className="ball-drop">
             </div>
         </div>)
     }

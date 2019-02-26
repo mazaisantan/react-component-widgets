@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 // import * as d3 from 'd3';
-import Axis from './axis/axis.jsx'
-import Background from './background/background.jsx'
-import Line from './linePath/linePath.jsx'
-import Bar from './bar/bar.jsx'
-import Pie from './pie/pie.jsx'
+// import Axis from './axis/axis.jsx'
+// import Background from './background/background.jsx'
+// import Line from './linePath/linePath.jsx'
+// import Bar from './bar/bar.jsx'
+// import Pie from './pie/pie.jsx'
 import D3SimpleDendrogramChart from './D3SimpleDendrogramChart/D3SimpleDendrogramChart.jsx'
 import './simpleDendrogramChart.scss';
 

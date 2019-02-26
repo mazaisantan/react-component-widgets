@@ -14,7 +14,10 @@ class Axis extends React.Component {
             orientation:'vertical',//horizontal/vertical
             data:['我的','xxxxxx'],
             length:50
-        }    
+        }   
+        if(this.props.data != undefined){
+            this.state = this.props.data
+        } 
     }
 
     setAxisOrientation(str){
@@ -55,15 +58,15 @@ class Axis extends React.Component {
         }
     }
 
-    getCoorTranslateStr(index){
-        let translateDistance = index*(this.state.length/(this.state.data.length-1));
+    getCoorTranslateStr(index,paddingBegin,paddingEnd){
+        let translateDistance = index*((this.state.length-paddingBegin-paddingEnd)/(this.state.data.length-1));
         var coordTranslateStr = undefined;
         switch(this.state.orientation){
             case 'horizontal':
-                return coordTranslateStr = 'translate(' + translateDistance +',0)';
+                return coordTranslateStr = 'translate(' + (translateDistance+paddingBegin) +',0)';
                 break;
             case 'vertical':
-                return coordTranslateStr = 'translate(0,' + (this.state.length - translateDistance) +')';
+                return coordTranslateStr = 'translate(0,' + (this.state.length - translateDistance-paddingBegin) +')';
                 break;
             default:
                 return coordTranslateStr = 'translate(0,0)';
@@ -73,7 +76,9 @@ class Axis extends React.Component {
 
     getTextPosition(item){   
         var textPosition = {x:'0',y:'0'};
+        item = item.toString()
         let itemLength = 0;
+        let itemHeight = 0;
         switch(this.state.orientation){
             case 'horizontal':
                 itemLength = 0;
@@ -84,18 +89,20 @@ class Axis extends React.Component {
                         itemLength = itemLength + 0.5;
                     }
                 }
-                return textPosition = {x:((-0.5*itemLength) + 'em'),y:'1em'};
+                return textPosition = {x:((-0.5*itemLength) + 'em'),y:'1.5em'};
                 break;
             case 'vertical':
-                itemLength = 0.5;
+                itemLength = 0;
+                itemHeight = 0.5;
                 for(let i=0;i<item.length;i++){
                     if(item.match(/[\u4e00-\u9fa5]/g)){//中文字符
-                        itemLength = 1;
+                        itemLength ++;
+                        itemHeight = 0.5;
                     }else{
-  
+                        itemLength = itemLength + 0.5;
                     }
                 }
-                return textPosition = {x:'-1em',y:(-(0.5*itemLength)+'em')};
+                return textPosition = {x:(-1*itemLength-0.8)+'em',y:(0.5*itemHeight)+'em'};
                 break;
             default:
                 return textPosition = {x:'0',y:'0'};
@@ -125,14 +132,14 @@ class Axis extends React.Component {
     }
     render() {
         return (
-        <g className='axis-container'>
+        <g className='axis-container' transform={this.props.transform}>
             <path d={this.getAxisPathStr()} stroke='#000'></path>
             {
                 this.state.data.map((item,index)=>{
                     let textPosition = this.getTextPosition(item);
                     let textElement = React.createElement('text',{x:textPosition.x,y:textPosition.y},item); 
-                    let backgroundStripElement = this.getBackgroundStripElement(index);     
-                    return React.createElement('g',{className:'coord',transform:this.getCoorTranslateStr(index)},textElement,backgroundStripElement);
+                    // let backgroundStripElement = this.getBackgroundStripElement(index);     
+                    return React.createElement('g',{className:'coord',transform:this.getCoorTranslateStr(index,this.props.data.padding.begin,this.props.data.padding.end)},textElement);
                 })
             }
         </g>)

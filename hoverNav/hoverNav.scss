@@ -1,0 +1,77 @@
+.hover-nav-container{
+    user-select:none;//取消双击选中文本
+    position:fixed;
+    padding:28px;
+    border-radius: 50%;
+    background:gray;
+    width:110px;
+    height:110px;
+    right:50px;
+    bottom:50px;
+    .menu-container{
+        width:100px;
+        height:100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size:0px;
+        border-radius: 50%;
+        cursor:pointer;
+        background-color:white;
+        opacity: 1;
+        .menu{ 
+            font-size:70px;
+            text-align: center;
+            width:100px;
+            line-height:100px;
+            font-family:cursive;//"Times New Roman";
+            // transform:rotate(270deg);
+            text-align:center;
+            vertical-align: bottom;
+        }  
+    }
+    .sub-menu-container{
+        transform:rotate(90deg);
+        position:absolute;
+        transform-origin:55px 55px;
+        
+        .sub-menu{
+            text-align:center;
+            border-radius: 50%;
+            background-color:white;
+            width:20px;
+            height:20px;
+            line-height:1;
+            transform:rotate(-45deg) scale(1);
+            transition-duration: 1s;   
+            transform-origin: 50% 50%;
+        }
+        .sub-menu.fold{
+            transform:rotate(-45deg) scale(0);
+            transition-duration: 1s;    
+        }
+        
+    }
+}
+
+
+/*paper样式*/
+.paper--0 {
+    box-shadow: none
+}
+.paper--1 {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2)
+}
+.paper--2 {
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.4)
+}
+.paper--3 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12),0 3px 5px -1px rgba(0,0,0,.4)
+}
+.paper--4 {
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12),0 5px 5px -3px rgba(0,0,0,.4)
+}
+.paper--5 {
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14),0 6px 30px 5px rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.4)
+}

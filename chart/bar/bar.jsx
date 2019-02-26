@@ -38,7 +38,8 @@ class Bar extends React.Component {
         let length = this.axis.length;
         let scale = this.axis.scale; 
         this.axis.data.map((item,index)=>{
-            this.state.position[index].x = (item.x - scale.horizontal[0])*(length.horizontal)/(scale.horizontal[1]-scale.horizontal[0]);
+            this.state.position[index].x =
+             (item.x - scale.horizontal[0])*(length.horizontal)/(scale.horizontal[1]-scale.horizontal[0]);
             this.state.position[index].y = (item.y - scale.vertical[0])*(length.vertical)/(scale.vertical[1]-scale.vertical[0]);
         })
     }

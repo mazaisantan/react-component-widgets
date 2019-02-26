@@ -21,7 +21,7 @@ class Billboard extends React.Component {
             <Router>
                 <div className='billboard-container' style={{overflow:'hidden'}}>
                     <Siber data = {this.siberData} style={{float:'left',width:'200px'}}/>
-                    <ContenRoute components = {this.props.components} style={{marginLeft:'200px'}}/>
+                    <ContenRoute components = {this.props.components}/>
                 </div>
             </Router>
         )

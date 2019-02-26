@@ -1,51 +1,11 @@
-function constant$11(x) {
-    return function constant() {
-      return x;
-    };
+function path() {
+  return new Path;
 }
-function sign$1(x) {
-    return x < 0 ? -1 : 1;
-}
-function point$5(that, t0, t1) {
-    var x0 = that._x0,
-        y0 = that._y0,
-        x1 = that._x1,
-        y1 = that._y1,
-        dx = (x1 - x0) / 3;
-    that._context.bezierCurveTo(x0 + dx, y0 + dx * t0, x1 - dx, y1 - dx * t1, x1, y1);
-}
-// Calculate the slopes of the tangents (Hermite-type interpolation) based on
-// the following paper: Steffen, M. 1990. A Simple Method for Monotonic
-// Interpolation in One Dimension. Astronomy and Astrophysics, Vol. 239, NO.
-// NOV(II), P. 443, 1990.
-function slope3(that, x2, y2) {
-    var h0 = that._x1 - that._x0,
-        h1 = x2 - that._x1,
-        s0 = (that._y1 - that._y0) / (h0 || h1 < 0 && -0),
-        s1 = (y2 - that._y1) / (h1 || h0 < 0 && -0),
-        p = (s0 * h1 + s1 * h0) / (h0 + h1);
-    return (sign$1(s0) + sign$1(s1)) * Math.min(Math.abs(s0), Math.abs(s1), 0.5 * Math.abs(p)) || 0;
-}
-  
-// Calculate a one-sided slope.
-function slope2(that, t) {
-    var h = that._x1 - that._x0;
-    return h ? (3 * (that._y1 - that._y0) / h - t) / 2 : t;
-}
-
-var pi = Math.PI,
-    tau = 2 * pi,
-    epsilon = 1e-6,
-    tauEpsilon = tau - epsilon;
 
 function Path() {
   this._x0 = this._y0 = // start of current subpath
   this._x1 = this._y1 = null; // end of current subpath
   this._ = "";
-}
-
-function path() {
-  return new Path;
 }
 
 Path.prototype = path.prototype = {
@@ -161,6 +121,52 @@ Path.prototype = path.prototype = {
     return this._;
   }
 };
+
+
+function constant$11(x) {
+    return function constant() {
+      return x;
+    };
+}
+function sign$1(x) {
+    return x < 0 ? -1 : 1;
+}
+function point$5(that, t0, t1) {
+    var x0 = that._x0,
+        y0 = that._y0,
+        x1 = that._x1,
+        y1 = that._y1,
+        dx = (x1 - x0) / 3;
+    that._context.bezierCurveTo(x0 + dx, y0 + dx * t0, x1 - dx, y1 - dx * t1, x1, y1);
+}
+
+// Calculate a one-sided slope.
+function slope2(that, t) {
+  var h = that._x1 - that._x0;
+  return h ? (3 * (that._y1 - that._y0) / h - t) / 2 : t;
+}
+
+// Calculate the slopes of the tangents (Hermite-type interpolation) based on
+// the following paper: Steffen, M. 1990. A Simple Method for Monotonic
+// Interpolation in One Dimension. Astronomy and Astrophysics, Vol. 239, NO.
+// NOV(II), P. 443, 1990.
+function slope3(that, x2, y2) {
+    var h0 = that._x1 - that._x0,
+        h1 = x2 - that._x1,
+        s0 = (that._y1 - that._y0) / (h0 || h1 < 0 && -0),
+        s1 = (y2 - that._y1) / (h1 || h0 < 0 && -0),
+        p = (s0 * h1 + s1 * h0) / (h0 + h1);
+    return (sign$1(s0) + sign$1(s1)) * Math.min(Math.abs(s0), Math.abs(s1), 0.5 * Math.abs(p)) || 0;
+}
+  
+
+
+var pi = Math.PI,
+    tau = 2 * pi,
+    epsilon = 1e-6,
+    tauEpsilon = tau - epsilon;
+
+
 
 function Linear(context) {
     this._context = context;
