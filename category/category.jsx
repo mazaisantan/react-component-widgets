@@ -36,7 +36,7 @@ class Category extends React.Component {
     
     render() {
         return (
-            <div className='cagegory-container' style={this.props.style}> 
+            <div className='category-container' style={this.props.style}> 
                 {this.getCategoryDom.call(this,this.state.data)} 
             </div>
         )

@@ -1,14 +1,15 @@
-.hover-nav-container{
+.L.hover-nav-container{
     user-select:none;//取消双击选中文本
     position:fixed;
     padding:28px;
     border-radius: 50%;
     background:gray;
+    box-sizing:content-box;
     width:110px;
     height:110px;
     right:50px;
     bottom:50px;
-    .menu-container{
+    .L.menu-container{
         width:100px;
         height:100px;
         position: absolute;
@@ -20,7 +21,7 @@
         cursor:pointer;
         background-color:white;
         opacity: 1;
-        .menu{ 
+        .L.menu{ 
             font-size:70px;
             text-align: center;
             width:100px;
@@ -31,23 +32,22 @@
             vertical-align: bottom;
         }  
     }
-    .sub-menu-container{
+    .L.sub-menu-container{
         transform:rotate(90deg);
         position:absolute;
-        transform-origin:55px 55px;
-        
-        .sub-menu{
+        transform-origin:55px 55px;   
+        .L.sub-menu{
             text-align:center;
             border-radius: 50%;
             background-color:white;
             width:20px;
             height:20px;
-            line-height:1;
+            line-height:20px;
             transform:rotate(-45deg) scale(1);
             transition-duration: 1s;   
             transform-origin: 50% 50%;
         }
-        .sub-menu.fold{
+        .L.sub-menu.fold{
             transform:rotate(-45deg) scale(0);
             transition-duration: 1s;    
         }

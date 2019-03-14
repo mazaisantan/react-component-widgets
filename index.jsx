@@ -1,4 +1,6 @@
 // import './react-md.indigo-pink.min.css'
+import './react-md.css';
+import './react-md-font.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Star from './star/star.jsx'
@@ -41,6 +43,8 @@ import curveLinePath from './chart/curveLinePath/curveLinePath.jsx'
 import SimpleBarChart from './chart/simpleBarChart.jsx'
 import InputField from './inputField/inputField.jsx'
 import HoverNav from './hoverNav/hoverNav.jsx'
+import RippleButton from './rippleButton/rippleButton.jsx'
+import Colors from './colors/colors.jsx'
 
 
 var allComponent = {  
@@ -49,6 +53,7 @@ var allComponent = {
     Bounce,
     Card,
     Category,
+    Colors,
     curveLinePath,
     HoverNav,
     Dropdown,
@@ -65,6 +70,7 @@ var allComponent = {
     NavNumber,
     ProfileCard,
     React_Swipe_Wrapper,
+    RippleButton,
     ScrollToTop,
     SimpleItem,
     SimpleList,

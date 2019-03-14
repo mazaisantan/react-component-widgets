@@ -30,7 +30,7 @@ class ScrollLoading extends React.Component {
 
                 //返回元素相对于文档document顶部距离
                 let elementOffsetTop = this.node.offsetTop;
-                //console.log('元素距离文档顶部距离：' + elementOffsetTop);
+                console.log('元素距离文档顶部距离：' + elementOffsetTop);
 
                 if(elementOffsetTop < scrollDistance+visualHeight && loadFlag == false){
                 loadFlag = true;
@@ -74,6 +74,7 @@ class ScrollLoading extends React.Component {
     render() {
         return (
         <div className="scrollLoading-container">
+            <div style={{height:'20px'}}></div>
             <img src={require('./scrollLoading.png')} ref = {(node=>{this.node = node})}>
             </img>
         </div>

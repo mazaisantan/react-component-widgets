@@ -27,12 +27,12 @@ class HoverNav extends React.Component {
 
     render() {
         return (
-            <div className="hover-nav-container" onMouseMove={this.unfoldMenu.bind(this)} onMouseOut={this.foldMenu.bind(this)}>
-                <div className='menu-container paper--5'>
-                    <div className="menu">+</div>
+            <div className="L hover-nav-container" onMouseMove={this.unfoldMenu.bind(this)} onMouseOut={this.foldMenu.bind(this)}>
+                <div className='L menu-container paper--5'>
+                    <div className="L menu">+</div>
                 </div>
-                <div className={'sub-menu-container'}>
-                    <div className={"sub-menu "+this.state.subMenuState}>x</div>
+                <div className={'L sub-menu-container'}>
+                    <div className={"L sub-menu "+this.state.subMenuState}>x</div>
                 </div>
             </div>
         )

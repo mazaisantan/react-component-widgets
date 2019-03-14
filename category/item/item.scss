@@ -1,11 +1,84 @@
-.item-container{
-    margin-left:20px;
-    line-height:20px;
+.list-container{
+    box-sizing: border-box;
     font-size:15px;
-    .item-title{
+    overflow:hidden;
+    .list-title{
         cursor: pointer;
-    }
-    .item-content{
+        line-height:25px;
+        background: gray;
+        text-indent:20px;
+        padding-right:20px;
+        .list-icon{
+            float:right;
+            text-align: center;
+            text-indent:0px;
+            font-family:cursive;
+            font-weight: bold;
+        }
         
+    }
+    .list-title.folded{
+        .list-icon{
+            transform: rotate(0deg);
+            transition: transform 1s;
+        }
+        
+    }
+    .list-title.unfolded{
+        .list-icon{
+            transform: rotate(90deg);
+            transition: transform 1s;
+        }
+    }
+    .list-content{
+        float:left;
+        width:100%;
+        .list-container{
+            .list-title{
+                text-indent:40px;
+                background:red;
+            }
+            .list-content{
+                .list-container{
+                    .list-title{
+                        text-indent:60px;
+                    }
+                }
+            }
+        }
     } 
+    .list-content.folded{
+        .list-container{
+            .list-title{
+                line-height:0px;
+                color:transparent;
+                font-size:0px;
+                transition-duration: 1s;
+            }
+            .list-content{
+                .list-container{
+                    .list-title{
+                        line-height:0px;
+                        font-size:0px;
+                        color:transparent;
+                        transition-duration: 1s;
+                    }
+                }
+            }
+        }
+    }
+    .list-content.unfolded{
+        .list-container{
+            .list-title{
+                transition-duration: 1s;
+            }
+            .list-content{
+                .list-container{
+                    .list-title{
+                        transition-duration: 1s;
+                    }
+                }
+            }
+        }
+    }
 }
