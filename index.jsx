@@ -45,7 +45,8 @@ import InputField from './inputField/inputField.jsx'
 import HoverNav from './hoverNav/hoverNav.jsx'
 import RippleButton from './rippleButton/rippleButton.jsx'
 import Colors from './colors/colors.jsx'
-
+import ColorGradient from './colorGradient/colorGradient.jsx'
+import Layouts from './layouts/layouts.jsx'
 
 var allComponent = {  
     // React_Swipe,
@@ -53,6 +54,7 @@ var allComponent = {
     Bounce,
     Card,
     Category,
+    ColorGradient,
     Colors,
     curveLinePath,
     HoverNav,
@@ -61,6 +63,7 @@ var allComponent = {
     FadeInOverlay,
     ImageText,
     InputField,
+    Layouts,
     Login,
     LinePath,
     MenuAutocomplete,
