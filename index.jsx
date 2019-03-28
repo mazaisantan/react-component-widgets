@@ -1,6 +1,8 @@
 // import './react-md.indigo-pink.min.css'
-import './react-md.css';
-import './react-md-font.css';
+import './style/react-md.css';
+import './style/paper.css'
+import './icons/react-md-font.css';
+import './icons/materialIcons/style.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Star from './star/star.jsx'
@@ -47,6 +49,9 @@ import RippleButton from './rippleButton/rippleButton.jsx'
 import Colors from './colors/colors.jsx'
 import ColorGradient from './colorGradient/colorGradient.jsx'
 import Layouts from './layouts/layouts.jsx'
+import IconShowCase from './iconShowCase/iconShowCase.jsx'
+import HoverTransition from './hoverTransition/hoverTransition.jsx'
+import LazyLoadWrapper from './lazyLoad/lazyLoadWrapper.jsx'
 
 var allComponent = {  
     // React_Swipe,
@@ -57,12 +62,15 @@ var allComponent = {
     ColorGradient,
     Colors,
     curveLinePath,
-    HoverNav,
     Dropdown,
     OrientationExamples,
     FadeInOverlay,
+    HoverNav,
+    HoverTransition,
     ImageText,
     InputField,
+    IconShowCase,
+    LazyLoadWrapper,
     Layouts,
     Login,
     LinePath,
