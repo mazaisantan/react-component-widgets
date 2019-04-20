@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import './pie.scss';
 
-class Pie extends React.Component {
+class SvgPie extends React.Component {
     constructor(props){
-        super(props);  
-        this.data = [1,2,3,4,5];
+        super(props); 
+        this.data = [1,2,3,4,5]
         this.state = {
+            pos:{
+                x0:0,
+                y0:0
+            },
             angles:[],
             curAngle:{
                 startAngle:0,
@@ -33,7 +37,7 @@ class Pie extends React.Component {
         this.state.curAngle.endAngle = this.state.curAngle.startAngle + angle;
         let startAngle = this.state.curAngle.startAngle; 
         let endAngle = this.state.curAngle.endAngle;
-        let x0 = 0,y0 = 0;//圆心
+        let {x0,y0} =  this.state.pos//圆心
         let r = 50;//半径
         let x1 = x0+r*Math.sin(startAngle);
         let y1 = y0-r*Math.cos(startAngle);
@@ -67,7 +71,7 @@ class Pie extends React.Component {
     }
 }
 
-Pie.propTypes = {
+SvgPie.propTypes = {
 
 }
-export default Pie
+export default SvgPie

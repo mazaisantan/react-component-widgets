@@ -37,7 +37,7 @@ import ScrollToTop from './scrollToTop/scrollToTop.jsx'
 import ScrollLoading from './scrollLoading/scrollLoading.jsx'
 import Border1px from './border1px/border1px.jsx'
 import Billboard from './billboard/billboard.jsx'
-import Todos from './todos/index.jsx'
+import TodosWithRedux from './todosWithRedux/index.jsx'
 import OrientationExamples from './datePicker/datePicker.jsx'
 import SideBarWrapper from './sideBar/sideBar.jsx'
 import LinePath from './chart/linePath/linePath.jsx'
@@ -52,6 +52,9 @@ import Layouts from './layouts/layouts.jsx'
 import IconShowCase from './iconShowCase/iconShowCase.jsx'
 import HoverTransition from './hoverTransition/hoverTransition.jsx'
 import LazyLoadWrapper from './lazyLoad/lazyLoadWrapper.jsx'
+import ToDos from './todos/todos.jsx'
+import ShoppingCart from './shoppingCart/index.js'
+import TreeView from './treeView/index.js'
 
 var allComponent = {  
     // React_Swipe,
@@ -83,6 +86,8 @@ var allComponent = {
     React_Swipe_Wrapper,
     RippleButton,
     ScrollToTop,
+    ScrollLoading,
+    ShoppingCart,
     SimpleItem,
     SimpleList,
     SimplePosition,
@@ -97,9 +102,10 @@ var allComponent = {
     SideBarWrapper,
     SlideShowWrapper,
     Star,
-    ScrollLoading,
     Taps,
-    Todos,
+    ToDos,
+    TodosWithRedux,
+    TreeView,
     WaitCircle,
 }
 
