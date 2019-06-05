@@ -1,0 +1,31 @@
+.taps-container{
+    border: 1px solid #ddd;
+    height: 320px;
+    overflow: hidden;
+    .navs{
+        overflow: hidden;
+        background-color: #f1f1f1;
+        a{
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            border-bottom: 3px solid transparent;
+            &.selected{
+                border-bottom: 3px solid red;
+            }
+        }
+    }
+    .contents{
+        div{
+            display:none;
+            &.selected{
+                display:block;
+            }
+        }
+
+    }
+}

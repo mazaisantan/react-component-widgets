@@ -1,0 +1,9 @@
+.sideBar-container{
+    width:200px;
+    height:100%;
+    color: hsla(0,0%,100%,.67);
+    background: #404040;
+    &hover,&active{
+        color:white;
+    }
+}

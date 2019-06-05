@@ -1,0 +1,19 @@
+.border1px-container{
+    position: relative;
+    margin:10px;
+    box-sizing:border-box;
+    width:100px;
+    height:100px;
+    &:after{
+        content:'';
+        position: absolute;
+        box-sizing: border-box;
+        border:1px solid black;
+        width:200%;
+        height:200%;
+        left:0;
+        top:0;
+        transform-origin: left top;//如果没有这句，圆心为50%width，50%height
+        transform:scale(0.5);
+    }
+}

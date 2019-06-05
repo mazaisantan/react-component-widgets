@@ -1,0 +1,12 @@
+.simple-position{
+    font-size:14px;
+    line-height: 38px;
+    span{
+        color:gray;
+        &:hover{
+            color:black;
+            border-bottom:1px solid black;
+            cursor:pointer;
+        }
+    }
+}

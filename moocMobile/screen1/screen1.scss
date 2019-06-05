@@ -1,0 +1,52 @@
+/* 第一屏模块开始 */
+
+.screen-1 {
+    color: rgb(255,255,255);
+    height: 800px;
+    background-color: #ececec;
+    text-align: center;
+    background: url(./bg-screen-1.png) no-repeat center bottom;
+    background-size:cover;
+    position: relative;
+}
+
+.screen-1__wrap {
+    max-width: 1200px;
+    min-width: 800px;
+    margin: 0px auto;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen-1__heading {
+    position: absolute;
+    top: 160px;
+    width: 100%;
+    font-size: 42px;
+}
+
+.screen-1__heading b{
+    color: #f01414;
+    font-weight: normal;
+}
+.screen-1__phone {
+    position: absolute;
+    bottom: 180px;
+    width: 1375px;
+    height: 305px;
+    left: 50%;
+    margin-left: -687px;
+    background: url(./screen-1-phone.png) no-repeat center ;
+    background-size: cover;
+    z-index: 1;
+}
+.screen-1__shadow {
+    position: absolute;
+    bottom: 30px;
+    width: 1233px;
+    height: 411px;
+    left: 50%;
+    margin-left: -616px;
+    background: url(./screen-1-shadow.png) no-repeat center ;
+}

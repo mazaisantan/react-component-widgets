@@ -1,0 +1,59 @@
+.simple-list{
+    .list-header{
+        ul{
+            list-style-type: none;
+            margin:0px;
+            padding:0px;
+            li{
+                overflow: hidden;
+                width:300px;
+                background-color:rgb(221, 220, 220);
+                .title{
+                    float:left;
+                    margin:2px 10px;
+                    font-size:18px;
+                    font-size:bold;
+                }
+                .score{
+                    float:right;
+                    margin:2px 10px;
+                    font-size:18px;
+                    color:gray;
+                }
+            }
+        }
+    }
+    .list-body{
+        ul{   
+            list-style-type:none;    
+            margin:0px;
+            padding:0px;   
+            li{
+                overflow: hidden;
+                width:300px;
+                text-align:left;
+                border-bottom: 1px solid rgb(189, 189, 189);
+                .number{
+                    float:left;
+                    font-size:25px;
+                    margin:-1px 8px;
+                    color:rgb(172, 171, 171);
+                }
+                .name{
+                    float:left;
+                    font-size:15px;
+                    margin:8px;
+                }
+                .score{
+                    float:right;
+                    font-size:15px;
+                    margin:8px 10px;
+                    color:rgb(134, 3, 3);
+                }
+            }
+        }
+    }
+    .list-foter{
+
+    }
+}

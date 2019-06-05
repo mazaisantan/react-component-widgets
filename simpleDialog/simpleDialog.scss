@@ -1,0 +1,22 @@
+.simple-Dialog{
+    font-size:0px;
+    line-height: 0;
+    .dialog{
+        width:100px;
+        height:100px;
+        position:relative;
+        background-color:black;
+        margin-left:10px;
+    }
+    .dialog:before {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        left:-10px;
+        top:20px;
+        border: medium solid black;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent black transparent transparent;
+    }
+}

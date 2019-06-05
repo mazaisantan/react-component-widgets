@@ -1,0 +1,32 @@
+.item-container{
+    margin-left:20px;
+    line-height:20px;
+    font-size:15px;
+    .item-title{
+        cursor: pointer;
+        font-size: 16px;
+        line-height:32px;
+        &:hover,&:active{
+            color:white;
+        }  
+        .icon-triangle-right{
+            float:right;
+            margin-top:5%;
+            margin-right:20px;   
+            transition:0.5s;
+        } 
+        .unfolded{
+            transform: rotate(90deg);
+            transition:0.5s;
+        }
+    }
+
+    .item-content{
+        // background: #333;
+    }
+    .item-content.folded{
+        height:0px;
+        overflow: hidden;
+        transition: 0s;
+    } 
+}

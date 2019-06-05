@@ -1,0 +1,49 @@
+.nav-number{
+    ul{
+        line-height:30px;
+        span{
+            display:inline-block;
+            margin:20px;
+            color:black;
+            font-size:32px;
+            font-weight:900;//normal:400;bold:700;
+            vertical-align:-10%; 
+            cursor: pointer;
+            a{
+                text-decoration: none;
+                color:black;
+            }
+        }
+        .disable{
+            color:rgb(102, 102, 102);
+            font-weight: 200;
+            cursor: default;
+            a{
+                text-decoration: none;
+                color:rgb(102, 102, 102);
+                cursor: default;
+            }
+        }
+        li{
+            display:inline-block;
+            list-style-type: none;
+            font-size:16px;
+            font-family:Arial, Helvetica;
+            margin:10px;
+            color:rgb(102, 102, 102);
+            a{
+                display: inline-block;
+                padding:10px;
+                text-decoration:none;
+                color:rgb(102, 102, 102);
+            }
+        }
+        .selected{
+            color:black;
+            border-bottom: 2px solid black;
+            a{
+                color:black;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.hover-transition-container{
+    position:relative;
+    width:80px;
+    height:80px;
+    border-radius: 50%;
+    .transition-icon-begin{
+        opacity: 1;
+        font-size:50px;
+        line-height:80px;
+        width:100%;
+        height:100%;
+        margin:auto;
+        text-align:center;
+        transform:rotate(0deg);
+        transition:opacity,transform 0.3s;
+    }
+    .transition-icon-end{
+        opacity: 0;
+        position:absolute;
+        font-size:50px;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%) rotate(-35deg);
+        // transition:opacity,transform 3s;
+    }
+
+    &:hover{
+        .transition-icon-begin{
+            opacity: 0;
+            transform:rotate(35deg);
+            //transition:opacity,transform 0.3s;
+        }
+        .transition-icon-end{
+            opacity: 1;
+            transform: translate(-50%,-50%) rotate(0deg);
+            transition:opacity,transform 0.3s;
+        }
+    }
+}

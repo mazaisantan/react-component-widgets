@@ -1,0 +1,35 @@
+
+@keyframes drop_bounce {
+    60%, 80%, to {
+    transform: translateY(400px);
+    animation-timing-function: ease;//先慢后快，对应动作0%->60%,70%->80%,90%->100%
+    }
+    70% { transform: translateY(300px); }
+    90% { transform: translateY(360px); }
+}
+
+@keyframes shake {
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+.bounce-container{
+    padding-left:2px;
+    min-height:450px;
+    min-width: 450px;
+    .ball-shake{
+        width:50px;
+        height:50px;
+        background-color: black;
+        animation: shake 0.2s 1.5 ease-out;//反向ease,先快后慢
+    }
+    .ball-drop{
+        width:50px;
+        height:50px;
+        border-radius: 50%;
+        background-color: black;
+        animation: drop_bounce 3s infinite cubic-bezier(.1,.25,1,.25);//反向ease,先快后慢
+    }
+    
+}
+

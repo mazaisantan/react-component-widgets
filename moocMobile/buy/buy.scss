@@ -1,0 +1,24 @@
+.buy {
+    height: 80px;
+    padding: 120px 0px;
+    background: url(./bg-screen-buy.png) no-repeat bottom center #2b333b;
+}
+
+.buy__button:hover,
+.buy__button {
+    width: 240px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    border-radius: 3px;
+    margin: 0px auto;
+    display: block;
+    background-color: #f01414;
+    transition:all .5s;
+}
+.buy__button:hover{
+    box-shadow: 0 10px 10px rgba(0,0,0,.5);
+    transform:translate(0,-5px);
+}
