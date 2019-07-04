@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import './colors.scss';
 
 class Colors extends React.Component {
@@ -44,9 +42,4 @@ class Colors extends React.Component {
     }
 }
 
-Colors.propTypes = {
-
-}
 export default Colors
-
-// 

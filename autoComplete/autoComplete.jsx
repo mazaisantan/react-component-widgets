@@ -1,12 +1,8 @@
-
-/*import { programmingLanguages as sampleData } from './constants/programminglanguages.js';*/
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Fuse from 'fuse.js';
 import { Autocomplete} from 'react-md';
-// import './autoComplete.css';
-
 
 export default class MenuAutocomplete extends React.Component {
   constructor(props){
@@ -17,7 +13,6 @@ export default class MenuAutocomplete extends React.Component {
     keys: [{ name: 'primaryText', weight: 1 }],
   });
   }
-  
 
   /**
    * A custom filter function to use if the default `caseInsensitiveFilter`

@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './scrollToTop.scss';
+import React from 'react'
+import './scrollToTop.scss'
 
 class ScrollToTop extends React.Component {
     constructor(props){
@@ -23,7 +21,4 @@ class ScrollToTop extends React.Component {
     }
 }
 
-ScrollToTop.propTypes = {
-
-}
 export default ScrollToTop

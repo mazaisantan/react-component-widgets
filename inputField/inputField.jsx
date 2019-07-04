@@ -24,12 +24,13 @@ class InputField extends React.Component {
         })
     }
     render() {
+        let {inputState} = this.state
         return (
-        <div className={"input-field-container " + this.state.inputState}>
-            <label for='input-field'>title for input field</label>
-            <input className='input-field' onFocus={this.enableInputFieldState.bind(this)} onBlur={this.disableInputFieldState.bind(this)}></input>
-            <hr/>
-        </div>)
+            <div className={"input-field-container " + inputState}>
+                <label for='input-field'>title for input field</label>
+                <input className='input-field' onFocus={this.enableInputFieldState.bind(this)} onBlur={this.disableInputFieldState.bind(this)}></input>
+                <hr/>
+            </div>)
     }
 
 }

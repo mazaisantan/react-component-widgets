@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './profileCard.scss';
+import React from 'react'
+import './profileCard.scss'
 import './style.css'
 
 class ProfileCard extends React.Component {
@@ -24,7 +22,4 @@ class ProfileCard extends React.Component {
     }
 }
 
-/*ProfileCard.propTypes = {
-
-}*/
 export default ProfileCard

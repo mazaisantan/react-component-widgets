@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './modalDialog.scss';
+import React from 'react'
+import './modalDialog.scss'
 
 class ModalDialog extends React.Component {
     constructor(props){
@@ -26,7 +24,4 @@ class ModalDialog extends React.Component {
     }
 }
 
-ModalDialog.propTypes = {
-
-}
 export default ModalDialog

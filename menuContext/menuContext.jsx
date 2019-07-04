@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './menuContext.scss';
+import React from 'react'
+import './menuContext.scss'
 
 class MenuContext extends React.Component {
     constructor(props){
@@ -20,7 +18,4 @@ class MenuContext extends React.Component {
     }
 }
 
-MenuContext.propTypes = {
-
-}
 export default MenuContext

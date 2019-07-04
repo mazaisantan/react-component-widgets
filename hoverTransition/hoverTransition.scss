@@ -21,14 +21,12 @@
         left:50%;
         top:50%;
         transform: translate(-50%,-50%) rotate(-35deg);
-        // transition:opacity,transform 3s;
     }
 
     &:hover{
         .transition-icon-begin{
             opacity: 0;
             transform:rotate(35deg);
-            //transition:opacity,transform 0.3s;
         }
         .transition-icon-end{
             opacity: 1;

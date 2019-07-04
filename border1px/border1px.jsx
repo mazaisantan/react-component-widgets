@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './border1px.scss';
+import React from 'react'
+import './border1px.scss'
 
 class Border1px extends React.Component {
     constructor(props){
@@ -15,7 +13,4 @@ class Border1px extends React.Component {
     }
 }
 
-Border1px.propTypes = {
-
-}
 export default Border1px

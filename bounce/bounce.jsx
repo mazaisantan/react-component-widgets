@@ -1,24 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './bounce.scss';
+import React from 'react'
+import './bounce.scss'
 
 class Bounce extends React.Component {
     constructor(props){
-        super(props);      
+        super(props)
+        this.state = {
+            animationName:["ball-shake","ball-drop"]
+        }   
     }
     render() {
+        let {animationName} = this.state
         return (
-        <div className="bounce-container">
-            <div className="ball-shake">
-            </div>
-            <div className="ball-drop">
-            </div>
-        </div>)
+            <div className="bounce-container">
+                {animationName.map((item)=>{
+                    return <div className={item} key={item}></div>
+                })}
+            </div>)
     }
 }
 
-Bounce.propTypes = {
-
-}
 export default Bounce

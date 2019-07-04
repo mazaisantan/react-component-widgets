@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './simpleChart.scss';
+import React from 'react'
+import './simpleChart.scss'
 
 class SimpleChart extends React.Component {
     constructor(props){
@@ -36,7 +34,4 @@ class SimpleChart extends React.Component {
     }
 }
 
-SimpleChart.propTypes = {
-
-}
 export default SimpleChart

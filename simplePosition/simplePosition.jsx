@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './simplePosition.scss';
+import React from 'react'
+import './simplePosition.scss'
 
 class SimplePosition extends React.Component {
     constructor(props){
@@ -15,7 +13,4 @@ class SimplePosition extends React.Component {
     }
 }
 
-SimplePosition.propTypes = {
-
-}
 export default SimplePosition

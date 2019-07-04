@@ -1,8 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './style.css';
+import React from 'react'
+import './style.css'
 import './star.scss'
-import PropTypes from 'prop-types';
 
 class Star extends React.Component {
     constructor(props){
@@ -35,7 +33,4 @@ class Star extends React.Component {
     }
 }
 
-Star.propTypes = {
-    rate : PropTypes.number
-}
 export default Star

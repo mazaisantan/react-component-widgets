@@ -1,0 +1,33 @@
+ .accordion{ 
+    display: inline-block;
+    text-align: left;
+    
+    &:hover{
+    
+      // max-height technique
+      .accordion-content{
+        // If use the "height: auto", the effect not works. Is necessary some value for the CSS create a CSS animate, and we can use "max-height" with a great value for emulate this effect.
+        max-height: 600px;
+      }
+    
+    }
+  }
+
+  .accordion-button{
+    border-radius: 3px;
+    background: #00b8c9;
+    color: #fff;
+  }
+  
+  .accordion-content{
+    -webkit-transition: max-height 1s; 
+    -moz-transition: max-height 1s; 
+    -ms-transition: max-height 1s; 
+    -o-transition: max-height 1s; 
+    transition: max-height 1s;  
+    // background: #e5feff;
+    overflow: hidden;
+    // "height: 0" not work with css transitions
+    max-height: 0;
+  }
+  

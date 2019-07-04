@@ -1,0 +1,91 @@
+/* 第四屏开始 */
+.screen-4{
+    background-color: #fff;
+    text-align: center;
+    height: 800px;
+}
+.screen-4__wrap {
+    max-width: 1200px;
+    min-width: 800px;
+    margin: 0px auto;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen-4__heading {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    font-size: 42px;
+    color: #f01414;
+}
+.screen-4__subheading {
+    position: absolute;
+    top: 180px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.screen-4__type {
+    width: 1300px;
+    margin-left: 30px;
+    height: 270px;
+    bottom:220px;
+    position: absolute;
+    font-size: 16px;
+    text-align: center;
+}
+
+.screen-4__type-item {
+    width: 220px;
+    height: 270px;
+    float: left;
+    margin-right: 90px;
+    position: relative;
+}
+.screen-4__type-item-name{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 300px;
+    font-size: 16px;
+    height: 16px;
+    line-height: 16px;
+    color: #2c3238;
+}
+.screen-4__type-item-storage{
+
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 328px;
+    font-size: 9px;
+    height: 9px;
+    line-height: 9px;
+    color: #93999f;
+}
+
+.screen-4__type .photo{
+    width: 240px;
+    height: 270px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+    .screen-4__type-item_i_1 {
+        background: url("./phone-1.png") center left no-repeat;
+    }
+
+    .screen-4__type-item_i_2 {
+        background: url("./phone-2.png") center left no-repeat;
+    }
+
+    .screen-4__type-item_i_3 {
+        background: url("./phone-3.png") center left no-repeat;
+    }
+
+    .screen-4__type-item_i_4 {
+        background: url("./phone-4.png") center left no-repeat;
+    }

@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './scrollLoading.scss';
+import React from 'react'
+import './scrollLoading.scss'
 
 class ScrollLoading extends React.Component {
     constructor(props){
@@ -67,10 +65,6 @@ class ScrollLoading extends React.Component {
   
     }
       
-    
-    
-    
-
     render() {
         return (
         <div className="scrollLoading-container">
@@ -82,7 +76,4 @@ class ScrollLoading extends React.Component {
     }
 }
 
-ScrollLoading.propTypes = {
-
-}
 export default ScrollLoading

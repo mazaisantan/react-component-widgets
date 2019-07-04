@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import './colorGradient.scss';
 
 class ColorGradient extends React.Component {
@@ -84,9 +82,4 @@ class ColorGradient extends React.Component {
     }
 }
 
-ColorGradient.propTypes = {
-
-}
 export default ColorGradient 
-
-// style={{background:'linear-gradient:(45deg,'+item[1].from+','+item[1].to+')'}}

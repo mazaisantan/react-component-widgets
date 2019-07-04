@@ -1,11 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './imageText.scss';
+import React from 'react'
+import './imageText.scss'
 
 class ImageText extends React.Component {
     constructor(props){
-        super(props);      
+        super(props)
     }
     render() {
         return (
@@ -20,7 +18,4 @@ class ImageText extends React.Component {
     }
 }
 
-ImageText.propTypes = {
-
-}
 export default ImageText

@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './simpleDialog.scss';
+import React from 'react'
+import './simpleDialog.scss'
 
 class SimpleDialog extends React.Component {
     constructor(props){
@@ -15,7 +13,4 @@ class SimpleDialog extends React.Component {
     }
 }
 
-SimpleDialog.propTypes = {
-
-}
 export default SimpleDialog

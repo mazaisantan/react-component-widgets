@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './hoverNav.scss';
+import React from 'react'
+import './hoverNav.scss'
 
 class HoverNav extends React.Component {
     constructor(props){
@@ -39,7 +37,4 @@ class HoverNav extends React.Component {
     }
 }
 
-HoverNav.propTypes = {
-
-}
 export default HoverNav

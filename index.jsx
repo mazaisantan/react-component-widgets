@@ -1,4 +1,3 @@
-// import './react-md.indigo-pink.min.css'
 import './style/react-md.css';
 import './style/paper.css'
 import './icons/react-md-font.css';
@@ -51,12 +50,14 @@ import ColorGradient from './colorGradient/colorGradient.jsx'
 import Layouts from './layouts/layouts.jsx'
 import IconShowCase from './iconShowCase/iconShowCase.jsx'
 import HoverTransition from './hoverTransition/hoverTransition.jsx'
-import LazyLoadWrapper from './lazyLoad/lazyLoadWrapper.jsx'
 import ToDos from './todos/todos.jsx'
 import ShoppingCart from './shoppingCart/index.js'
 import TreeView from './treeView/index.js'
-import MoocMobile from './moocMobile/moocMobile.jsx'
+import XiaoMiMobile from './xiaoMiMobile/xiaoMiMobile.jsx'
 import ShoppingMall from './shoppingMall/app/index.jsx'
+import HeightTransition from './heightTransition/heightTransition.jsx'
+import BOM_DOM from './BOM_DOM/BOM_DOM.jsx'
+import LazyLoadWrapper from './lazyLoad/lazyLoadWrapper.jsx'
 
 var React_Swipe_Wrapper = ()=>(
     <React_Swipe>
@@ -69,9 +70,9 @@ var React_Swipe_Wrapper = ()=>(
 
 
 var allComponent = {  
-    // React_Swipe,
     Border1px,
     Bounce,
+    BOM_DOM,
     Card,
     Category,
     ColorGradient,
@@ -80,6 +81,7 @@ var allComponent = {
     Dropdown,
     OrientationExamples,
     FadeInOverlay,
+    HeightTransition,
     HoverNav,
     HoverTransition,
     ImageText,
@@ -92,7 +94,6 @@ var allComponent = {
     MenuAutocomplete,
     MenuContext,
     ModalDialog,
-    MoocMobile,
     NavBar,
     NavNumber,
     ProfileCard,
@@ -120,6 +121,7 @@ var allComponent = {
     TodosWithRedux,
     TreeView,
     WaitCircle,
+    XiaoMiMobile,
     ShoppingMall
 }
 
@@ -127,7 +129,6 @@ var allComponent = {
 ReactDOM.render(
     <Billboard components={allComponent}/>,
     document.getElementById("example")
-);
-
+)
 
 

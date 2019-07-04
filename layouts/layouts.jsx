@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './layouts.scss';
+import React from 'react'
+import './layouts.scss'
 
 class Layouts extends React.Component {
     constructor(props){
@@ -29,7 +27,4 @@ class Layouts extends React.Component {
     }
 }
 
-Layouts.propTypes = {
-
-}
 export default Layouts

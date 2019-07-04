@@ -1,5 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
 import './item.scss'
 
 class Item extends React.Component {
@@ -8,19 +7,26 @@ class Item extends React.Component {
         this.state={
             folded : true
         }
-        this.cursorStyle = {cursor:this.props.children?'pointer':'default'}      
+        let {children} = this.props
+        this.cursorStyle = {
+            cursor:children?'pointer':'default'
+        }      
     }
     foldItemContent(){
-        this.setState({folded:this.state.folded ? false : true})
+        let {folded} = this.state
+        this.setState({folded:folded ? false : true})
     }
     render() {
+        let {foldItemContent,cursorStyle} = this
+        let {title,children} = this.props
+        let {folded} = this.state
         return (
             <div className='item-container'>
-                <div className='item-title'  onClick={this.foldItemContent.bind(this)} style={this.cursorStyle}>
-                    {this.props.title}
+                <div className='item-title'  onClick={foldItemContent.bind(this)} style={cursorStyle}>
+                    {title}
                 </div>
                 <div className='item-content'>
-                    {this.state.folded ? null : this.props.children}
+                    {folded ? null : children}
                 </div>
             </div>
         )

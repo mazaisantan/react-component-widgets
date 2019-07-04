@@ -17,17 +17,16 @@
     padding-left:2px;
     min-height:450px;
     min-width: 450px;
-    .ball-shake{
+    div{
         width:50px;
         height:50px;
         background-color: black;
+    }
+    .ball-shake{
         animation: shake 0.2s 1.5 ease-out;//反向ease,先快后慢
     }
     .ball-drop{
-        width:50px;
-        height:50px;
         border-radius: 50%;
-        background-color: black;
         animation: drop_bounce 3s infinite cubic-bezier(.1,.25,1,.25);//反向ease,先快后慢
     }
     

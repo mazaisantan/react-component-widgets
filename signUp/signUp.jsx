@@ -1,6 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
+import React from 'react'
 import './signUp.scss';
 
 class SignUp extends React.Component {
@@ -40,7 +38,4 @@ class SignUp extends React.Component {
     }
 }
 
-SignUp.propTypes = {
-
-}
 export default SignUp

@@ -20,13 +20,13 @@ export default class SubRouter extends Component {
     const {root,city,login,user,search,detail} = RoutePath
     return (
       <Switch>
-        <Route exact path={root} component={Home}/>
+        <Route exact path={'root'} component={Home}/>
         <Route path={city} component={City}/>
         <Route path={login} component={Login}/>
         <Route path={user} component={User}/>
         <Route path={search} component={Search}/>
         <Route path={detail} component={Detail}/>
-        <Route component={NotFound}/>
+        <Route component={Home}/>
       </Switch>
     )
   }

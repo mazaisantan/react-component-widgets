@@ -40,7 +40,7 @@ class City extends React.Component {
         localStore.setItem(CITYNAME, newCity)
 
         // 跳转页面
-        this.props.history.replace('/')
+        this.props.history.replace('/ShoppingMall')
     }
 }
 

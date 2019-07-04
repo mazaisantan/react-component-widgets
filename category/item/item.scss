@@ -1,14 +1,15 @@
-.list-container{
+.list-item-container{
     box-sizing: border-box;
     font-size:15px;
+    padding:0px;
     overflow:hidden;
-    .list-title{
+    .list-item-title{
         cursor: pointer;
         line-height:25px;
         background: gray;
         text-indent:20px;
         padding-right:20px;
-        .list-icon{
+        .list-item-icon{
             float:right;
             text-align: center;
             text-indent:0px;
@@ -17,68 +18,45 @@
         }
         
     }
-    .list-title.folded{
-        .list-icon{
-            transform: rotate(0deg);
-            transition: transform 1s;
-        }
-        
-    }
-    .list-title.unfolded{
-        .list-icon{
-            transform: rotate(90deg);
-            transition: transform 1s;
-        }
-    }
-    .list-content{
+
+    .list-item-content{
         float:left;
         width:100%;
-        .list-container{
-            .list-title{
-                text-indent:40px;
-                background:red;
-            }
-            .list-content{
-                .list-container{
-                    .list-title{
-                        text-indent:60px;
-                    }
-                }
-            }
-        }
-    } 
-    .list-content.folded{
-        .list-container{
-            .list-title{
-                line-height:0px;
-                color:transparent;
-                font-size:0px;
-                transition-duration: 1s;
-            }
-            .list-content{
-                .list-container{
-                    .list-title{
-                        line-height:0px;
-                        font-size:0px;
-                        color:transparent;
-                        transition-duration: 1s;
-                    }
-                }
-            }
-        }
-    }
-    .list-content.unfolded{
-        .list-container{
-            .list-title{
-                transition-duration: 1s;
-            }
-            .list-content{
-                .list-container{
-                    .list-title{
-                        transition-duration: 1s;
-                    }
-                }
-            }
+        *{
+            background:red;
         }
     }
 }
+.unfolded{
+    .list-item-title{
+        
+    }
+    .list-item-icon{
+        transform: rotate(90deg);
+    }
+    .list-item-content{
+        // max-height:100px;
+    }
+}
+
+.folded{
+    .list-item-title{
+        
+    }
+    .list-item-icon.folded{
+        transform: rotate(0deg);
+    }
+    .list-item-content{
+        overflow: hidden;
+    }
+}
+
+.list-item-title,.list-item-icon,.list-item-content{
+    -webkit-transition: all 1s; 
+    -moz-transition: all 1s; 
+    -ms-transition:all 1s; 
+    -o-transition: all 1s; 
+    transition: all 1s;  
+}
+
+

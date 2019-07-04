@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import './dropdown.scss';
 
 class Dropdown extends React.Component {
@@ -21,7 +19,4 @@ class Dropdown extends React.Component {
     }
 }
 
-Dropdown.propTypes = {
-
-}
 export default Dropdown

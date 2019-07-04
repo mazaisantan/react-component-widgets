@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom'
 import LocalStore from '../util/localStore.js'
 import { CITYNAME } from '../config/localStoreKey.js'
 import * as userInfoActionsFromOtherFile from '../actions/userinfo.js' 
+import './index.scss'
 
 class App extends React.Component {
     constructor(props, context) {
@@ -17,7 +18,7 @@ class App extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className='shoppingmall-container'>
                 {
                     this.state.initDone
                     ? this.props.children

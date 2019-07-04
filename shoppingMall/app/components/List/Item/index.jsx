@@ -15,7 +15,7 @@ class ListItem extends React.Component {
         const data = this.props.data
         return (
             <div className="list-item clear-fix">
-                <Link to={'/detail/' + data.id}>
+                <Link to={'/ShoppingMall/detail/' + data.id}>
                     <div className="item-img-container float-left">
                         <img src={img} alt={data.title}/>
                     </div>

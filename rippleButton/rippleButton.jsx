@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './rippleButton.scss';
+import React from 'react'
+import './rippleButton.scss'
 
 class RippleButton extends React.Component {
     constructor(props){
@@ -37,7 +35,4 @@ class RippleButton extends React.Component {
     }
 }
 
-RippleButton.propTypes = {
-
-}
 export default RippleButton

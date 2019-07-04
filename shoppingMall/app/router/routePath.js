@@ -1,11 +1,11 @@
-const baseUrl = '/ShoppingMall'
+
 export default
 {
-    root:baseUrl,
-    city:baseUrl+"/city",
-    login:baseUrl+"/login/:router?",
-    user:baseUrl+"/user",
-    search:baseUrl+"/search/:category/:keyword?",
-    detail:baseUrl+"/detail/:id",
-    searchAll:'/search/all/'
+    root:'/ShoppingMall',
+    city:"/ShoppingMall/city",
+    login:"/ShoppingMall/login/:router?",
+    user:"/ShoppingMall/user",
+    search:"/ShoppingMall/search/:category/:keyword?",
+    detail:"/ShoppingMall/detail/:id",
+    searchAll:'/ShoppingMall/search/all/'
 }

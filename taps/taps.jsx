@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './taps.scss'
-import PropTypes from 'prop-types';
 
 class Taps extends React.Component {
     constructor(props){
@@ -30,7 +28,4 @@ class Taps extends React.Component {
     }
 }
 
-Taps.propTypes = {
-    
-}
 export default Taps

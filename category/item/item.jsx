@@ -1,5 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
 import './item.scss'
 
 class Item extends React.Component {
@@ -8,20 +7,39 @@ class Item extends React.Component {
         this.state={
             folded : 'unfolded'
         }
-        this.cursorStyle = {cursor:this.props.children?'pointer':'default'}      
+        let {children,style} = this.props
+        this.cursorStyle = {
+            cursor: children?'pointer':'default'}
     }
+    //折叠或展开item-content
     foldItemContent(){
-        this.setState({folded:this.state.folded =='folded' ? 'unfolded' : 'folded'})
+        let {folded} = this.state
+        let shape = this.node.getBoundingClientRect()
+        if(folded == 'folded'){
+            this.node.style.maxHeight = this.maxHeight//设置maxHeight使其展开
+            this.setState({folded:'unfolded'})
+        }else{
+            this.node.style.maxHeight = 0 + "px"//设置maxHeight使其折叠
+            this.setState({folded:'folded'})
+        }
+        this.setState({folded: folded =='folded' ? 'unfolded' : 'folded'})
+    }
+    componentDidMount(){
+        this.maxHeight = this.node.getBoundingClientRect().height + 'px'
+        this.node.style.maxHeight = this.maxHeight //初始化list-item-content 的max-heihght使其和高度一致
     }
     render() {
+        let {foldItemContent,cursorStyle} = this
+        let {title,children,style} = this.props
+        let {folded} = this.state
         return (
-            <div className={'list-container'}>
-                <div className={'list-title '+this.state.folded}  onClick={this.foldItemContent.bind(this)} style={this.cursorStyle}>
-                    {this.props.title}
-                    <span className='list-icon'>{this.props.children?'>':null}</span>
+            <div className={'list-item-container ' + folded}>
+                <div className={'list-item-title'}  onClick={foldItemContent.bind(this)} style={{...style,...cursorStyle}}>
+                    {title}
+                    <span className={'list-item-icon ' + folded}>{children ? '>':null}</span>
                 </div>
-                <div className={'list-content '+this.state.folded }>
-                    {this.props.children}
+                <div className={'list-item-content'} ref = {(node)=>{this.node = node}}>
+                    {children}
                 </div>
             </div>
         )

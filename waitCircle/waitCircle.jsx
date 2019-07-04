@@ -1,8 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './waitCircle.scss';
-import './style.css';
+import React from 'react'
+import './waitCircle.scss'
+import './style.css'
 
 class WaitCircle extends React.Component {
     constructor(props){
@@ -18,7 +16,4 @@ class WaitCircle extends React.Component {
     }
 }
 
-WaitCircle.propTypes = {
-
-}
 export default WaitCircle

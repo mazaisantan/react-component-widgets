@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import './iconShowCase.scss';
 import './icon/style.css';
 import data from './data.json'
@@ -24,7 +22,4 @@ class IconShowCase extends React.Component {
     }
 }
 
-IconShowCase.propTypes = {
-
-}
 export default IconShowCase

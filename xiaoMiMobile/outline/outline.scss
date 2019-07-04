@@ -1,0 +1,38 @@
+/*大纲模块*/
+
+.outline {
+    position: fixed;
+    padding: 5px 10px;
+    bottom: 120px;
+    right: 0;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0px 4px 12px 0px rgba(7, 17, 27, 0.1);
+}
+
+.outline__item_bar{
+    position:absolute;
+    margin-top:19px;
+    height:23px;
+    width:3px;
+    background-color: red;
+}
+
+.outline__item {
+    display: block;
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 0;
+    background: rgb(255,255,255);
+    margin: 5px 0px 0px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #93999f;
+}
+.outline__item:first-child{
+    border:none;
+}
+.outline__item_status_active{
+    color: #000;
+}

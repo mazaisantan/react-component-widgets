@@ -1,8 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './navNumber.scss';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from 'react'
+import './navNumber.scss'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Star from '../star/star.jsx'
 import ProfileCard from '../profileCard/profileCard.jsx'
 
@@ -67,7 +65,4 @@ class NavNumber extends React.Component {
     }
 }
 
-NavNumber.propTypes = {
-
-}
 export default NavNumber

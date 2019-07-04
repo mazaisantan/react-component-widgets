@@ -1,0 +1,67 @@
+/* 第二屏开始 */
+.screen-2 {
+    color: rgb(7,17,27);
+    height: 800px;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.screen-2__wrap {
+    max-width: 1200px;
+    min-width: 800px;
+    margin: 0px auto;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen-2__heading {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    font-size: 42px;
+    color: #f01414
+}
+
+.screen-2__subheading {
+    width: 100%;
+    top: 190px;
+    position: absolute;
+    font-size: 16px;
+}
+.screen-2__phone{
+    width: 800px;
+    height: 873px;
+    background: url(./bg-screen-2.png) no-repeat;
+    position: absolute;
+    left: 50%;
+    margin-left: -400px;
+    top: 270px;
+}
+.screen-2__point{
+    font-size: 15px;
+    color: #4D555d;
+    position: absolute;
+    // width: 100px;
+    white-space: nowrap;
+}
+.screen-2__point_i_1{
+    top: 180px;
+    left: -80px;
+    padding-right: 112px;
+    background: url(./icon-point-right.png) no-repeat center right;
+}
+.screen-2__point_i_2{
+    top: 37px;
+    left: 584px;
+
+    padding-left: 112px;
+    background: url(./icon-point-left.png) no-repeat center left;
+}
+.screen-2__point_i_3{
+    top: 340px;
+    left: 680px;
+
+    padding-left: 112px;
+    background: url(./icon-point-left.png) no-repeat center left;
+}

@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './simpleItem.scss';
+import React from 'react'
+import './simpleItem.scss'
 
 class SimpleItem extends React.Component {
     constructor(props){
@@ -24,7 +22,4 @@ class SimpleItem extends React.Component {
     }
 }
 
-SimpleItem.propTypes = {
-
-}
 export default SimpleItem

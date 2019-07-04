@@ -17,14 +17,15 @@ class Category extends React.Component {
                 'hello11':null
             }
         }
+        this.textIndent = 0
     }
 
-    getCategoryDom(data){
+    getCategoryDom(data,textIndent){
         if(data == null){
             return null; 
         }else{
-            return Object.keys(data).map((item,index)=>{
-                return <Item title = {getItemTitle(item)}>{this.getCategoryDom(data[item])}</Item>
+            return Object.keys(data).map((item)=>{
+                return <Item title = {getItemTitle(item)} style={{textIndent:textIndent+'px'}} key={item}>{this.getCategoryDom(data[item],textIndent+20)}</Item>
             })
         }
 
@@ -35,9 +36,12 @@ class Category extends React.Component {
 
     
     render() {
+        let {getCategoryDom} = this
+        let {data} = this.state
+        let textIndent = 0
         return (
-            <div className='category-container' style={this.props.style}> 
-                {this.getCategoryDom.call(this,this.state.data)} 
+            <div className='category-container'> 
+                {getCategoryDom.call(this,data,textIndent)} 
             </div>
         )
     }

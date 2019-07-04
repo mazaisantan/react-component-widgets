@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './simpleSpin.scss';
+import React from 'react'
+import './simpleSpin.scss'
 
 class SimpleSpin extends React.Component {
     constructor(props){
@@ -17,7 +15,4 @@ class SimpleSpin extends React.Component {
     }
 }
 
-SimpleSpin.propTypes = {
-
-}
 export default SimpleSpin

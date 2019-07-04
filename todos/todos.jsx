@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './todos.scss';
+import React from 'react'
+import './todos.scss'
 
 class Item extends React.Component {
     constructor(props){
@@ -119,7 +117,4 @@ class ToDos extends React.Component {
     }
 }
 
-ToDos.propTypes = {
-
-}
 export default ToDos

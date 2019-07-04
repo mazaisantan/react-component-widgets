@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './simpleList.scss';
+import React from 'react'
+import './simpleList.scss'
 
 class SimpleList extends React.Component {
     constructor(props){
@@ -39,7 +37,4 @@ class SimpleList extends React.Component {
     }
 }
 
-SimpleList.propTypes = {
-
-}
 export default SimpleList

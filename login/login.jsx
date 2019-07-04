@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './login.scss';
+import React from 'react'
+import './login.scss'
 
 class Login extends React.Component {
     constructor(props){
@@ -37,7 +35,4 @@ class Login extends React.Component {
     }
 }
 
-Login.propTypes = {
-
-}
 export default Login

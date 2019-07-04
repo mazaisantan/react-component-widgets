@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './navBar.scss';
+import React from 'react'
+import './navBar.scss'
 
 class NavBar extends React.Component {
     constructor(props){
@@ -21,7 +19,4 @@ class NavBar extends React.Component {
     }
 }
 
-NavBar.propTypes = {
-
-}
 export default NavBar
