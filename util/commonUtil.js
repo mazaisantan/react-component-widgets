@@ -64,5 +64,7 @@ function deepClone(obj){
     }
 }
 
-export deepClone
-export getFullPermutation
+module.exports = {
+    deepClone,
+    getFullPermutation
+}

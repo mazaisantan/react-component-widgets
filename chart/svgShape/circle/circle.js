@@ -1,50 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-
+import React from 'react'
 
 class SvgCircle extends React.Component {
 
     constructor(props){
         super(props);
+        let {shape,offset,pos} = this.props
         this.state = {
             shape:{
-                r:2
+                r:50,
+                ...shape
             },
             offset:{
                 xRadio:0,
-                yRadio:0
+                yRadio:0,
+                cx:0,
+                cy:0,
+                ...offset
             },
             pos:{
-                cx:0,
-                cy:0
-            },
-            margin:{
-                left:0,
-                right:0,
-                top:0,
-                bottom:0
+                x:0,
+                y:0,
+                ...pos
             }
         }
     }
 
     getActualPos(){
         let {shape,offset,pos} =  this.state
-        x = pos.cx - offset.xRadio*shape.width+r/2 + margin.left - margin.right
-        y = pos.cy - offset.yRadio*shape.height+r/2  + margin.top - margin.bottom
-        return {x,y}
+        let cx = pos.x - offset.xRadio*2*shape.r + offset.cx + shape.r
+        let cy = pos.y - offset.yRadio*2*shape.r  + offset.cy + shape.r
+        return {cx,cy}
     }
 
     render() {
         let pos = this.getActualPos()
         return(
-            <circle {...this.state.shape} {...pos} {...this.props}/>
+            <circle {...this.state.shape} {...pos}/>
         )
     }
-}
-
-SvgCircle.PropTypes = {
-
 }
 
 export default SvgCircle

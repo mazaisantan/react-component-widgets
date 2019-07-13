@@ -1,8 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './chartPanel.scss';
+import React from 'react'
+import './chartPanel.scss'
 import Axis from '../axis/axis.jsx'
+import SvgRect from '../svgShape/rect/rect.js'
 
 class ChartPanel extends React.Component {
     constructor(props){
@@ -11,38 +10,62 @@ class ChartPanel extends React.Component {
             margin:[100,100]//left、top边距
         } 
         this.scale = {
-            min:Math.min(...this.props.yAxis.data),
-            max:Math.max(...this.props.yAxis.data)
+            min: Math.min(...this.props.yAxis.data),
+            max: Math.max(...this.props.yAxis.data)
         }   
-        this.x.bind(this)
-        this.y.bind(this)
     }
     x(item){
-        let index = this.props.xAxis.indexOf(item)
-        let translateDistance = index*((this.props.xAxis.length-this.props.xAxis.paddingBegin-this.props.xAxis.paddingEnd)/(this.props.xAxis.data.length-1));
-        var coordTranslateStr = undefined;
-        coordTranslateStr = 'translate(' + (translateDistance+paddingBegin) +',0)';
-        return coordTranslateStr
+        let {xAxis} = this.props
+        let index = xAxis.data.indexOf(item)
+        let translateDistance = index*((xAxis.length-xAxis.padding.begin-xAxis.padding.end)/(xAxis.data.length-1));
+        let x = translateDistance + xAxis.padding.begin
+        return x
     }
-    y(item,length,paddingBegin,paddingEnd){
-        let y = paddingBegin+(item - this.scale.min)*(length-paddingBegin-paddingEnd)/(this.scale.max-this.scale.min)
+    height(item){
+        let {min,max} = this.scale
+        let {yAxis} = this.props
+        //取得item值y轴的映射值
+        let height = (item - min)*yAxis.length/(max-min)
+        return height
+    }
+    y(item){
+        let {yAxis} = this.props
+        //取得y坐标值,以左上角为起点
+        let y = yAxis.length - this.height(item)
         return y
     }
     render() {
+        let {x,y,height} = this
+        x= x.bind(this)
+        y= y.bind(this)
+        height= height.bind(this)
+        let {xAxis,yAxis,data} = this.props
+        let {margin} = this.state
+        
         return (
-        <g className='chartPanel-container' transform={'translate('+this.state.margin[0]+','+this.state.margin[1]+')'}>
-            <Axis data={this.props.xAxis} transform={'translate(0,'+this.props.yAxis.length+')'}/>
-            <Axis data={this.props.yAxis}/>
+        <g className='chartPanel-container' transform={'translate('+margin[0]+','+margin[1]+')'}>
+            <Axis data={xAxis} transform={'translate(0,'+yAxis.length+')'}/>
+            <Axis data={yAxis}/>
+            
             {
-                this.props.data.map((item)=>{
-                    return <rect className='bar' fill='orange' width='5px' height={this.y(item.y,this.props.yAxis.length,this.props.yAxis.padding.begin,this.props.yAxis.padding.end)}/>
+                data.map((item)=>{
+                    let offset = {
+                        xRadio: 0.5,
+                        yRadio:1
+                    }
+                    let pos = {
+                        x: x(item.x),
+                        y: y(0)
+                    }
+                    let shape = {
+                        width: 20,
+                        height: height(item.y)
+                    }
+                    return <SvgRect pos={pos} shape={shape} offset={offset}/>
                 })
             } 
         </g>)
     }
 }
 
-ChartPanel.propTypes = {
-
-}
 export default ChartPanel

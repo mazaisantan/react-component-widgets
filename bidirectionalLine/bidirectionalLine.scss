@@ -1,0 +1,21 @@
+.bidirectional-line-container{
+    height:100vh;
+    width:100%;
+    overflow:scroll;
+    background:transparent;
+    .data-line-wrapper{
+        // background:gray;
+        background:transparent;
+        width:100px;
+        height:1200px;
+        overflow: hidden;
+        .data-line{
+            margin:0px;
+            width:100px;
+            box-sizing: border-box;
+            vertical-align: bottom;
+            background-color:red;
+            text-align:center;
+        }
+    }
+}

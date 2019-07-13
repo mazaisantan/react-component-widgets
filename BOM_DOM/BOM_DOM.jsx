@@ -12,7 +12,7 @@ class BOM_DOM extends React.Component {
         //行内样式
         let style = this.node.style
         //渲染后的样式
-        let computedstyle1 = this.node.currentStyle
+        // let computedstyle1 = this.node.currentStyle
         let computedstyle2 =  document.defaultView.getComputedStyle(this.node)
         //浏览器可视区域高度
         let visualHeight = window.innerHeight          //标准浏览器及IE9+ 
@@ -43,9 +43,14 @@ class BOM_DOM extends React.Component {
         //绑定事件的对象
         let currentTarget = evt.currentTarget
     }
+
+    scrollFunction(){
+        //该节点的滚动距离
+        let scrollTop = this.node.scrollTop
+    }
     render() {
         return (
-            <div className="bom-dom-container" ref={node=>{this.node = node}} onClick={this.clickFunction}>
+            <div className="bom-dom-container" ref={node=>{this.node = node}} onClick={this.clickFunction.bind(this)} onScroll={this.scrollFunction.bind(this)}>
             </div>
         )
     }

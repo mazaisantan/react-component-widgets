@@ -1,29 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-
+import React from 'react'
 
 class SvgRect extends React.Component {
     constructor(props){
-        super(props);
+        super(props)
+        let {shape,offset,pos} = this.props
         this.state = {
             shape:{
-                width:0,
-                height:0
+                width:100,
+                height:20,
+                ...shape
             },
             offset:{
                 xRadio:0,
-                yRadio:0
+                yRadio:0.5,
+                cx:0,
+                cy:0,
+                ...offset
             },
             pos:{
                 x:0,
-                y:0
-            },
-            margin:{
-                left:0,
-                right:0,
-                bottom:0,
-                top:0
+                y:200,
+                ...pos
             }
         }
     }
@@ -31,21 +28,18 @@ class SvgRect extends React.Component {
     getActualPos(){
         let {shape,offset,pos} =  this.state
         let x = 0,y = 0;
-        x = pos.x - (offset.xRadio)*(shape.width) + margin.left - margin.right
-        y = pos.y - offset.yRadio*shape.height + margin.top - margin.bottom
+        x = pos.x - offset.xRadio*shape.width + offset.cx
+        y = pos.y - offset.yRadio*shape.height + offset.cy
         return {x,y}
     }
 
     render() {
         let pos = this.getActualPos()
+        let {shape} = this.state
         return(
-            <rect {...this.state.shape} {...pos} {...this.props}/>
+            <rect {...shape} {...pos}/>
         )
     }
-}
-
-SvgRect.PropTypes = {
-
 }
 
 export default SvgRect

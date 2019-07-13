@@ -1,31 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-
+import React from 'react'
 
 class SvgText extends React.Component {
 
     constructor(props){
-        super(props);
-        let text = this.props.children ? this.props.children : 'x'
+        super(props)
+        let text = this.props.children || 'hello world'
+        let {shape,offset,pos,margin} = this.props
         this.state = {
-            shape:{
+            shape:shape || {
                 width:this.getTextWidth(text),
                 height:this.getTextHeight(text)
             },
-            offset:{
-                xRadio:0,
-                yRadio:0
+            offset:offset || {
+                xRadio:0.5,
+                yRadio:0.5
             },
-            pos:{
+            pos:pos || {
                 x:0,
-                y:0
+                y:150
             },
-            margin:{
+            margin:margin || {
                 left:0,
                 right:0,
                 top:0,
-                bottom
+                bottom:0
             }
         }
     }
@@ -45,7 +43,7 @@ class SvgText extends React.Component {
     getTextHeight(text){
         let textHeight = 0.5;
         for(let i=0;i<text.length;i++){
-            if(item.match(/[\u4e00-\u9fa5]/g)){//中文字符
+            if(text.match(/[\u4e00-\u9fa5]/g)){//中文字符
                 textHeight = 1
             }else{
                 
@@ -55,25 +53,31 @@ class SvgText extends React.Component {
     }
 
     getActualPos(){
-        let {shape,offset,pos} =  this.state
+        let {shape,offset,pos,margin} =  this.state
         let x = 0,y = 0;
         x = pos.x - offset.xRadio*shape.width + margin.left - margin.right
         y = pos.y - offset.yRadio*shape.height + margin.top - margin.bottom
         return {x,y}
     }
 
+    componentDidMount(){
+        let fontSize = document.defaultView.getComputedStyle(this.node).fontSize
+        fontSize = parseInt(fontSize)
+        let {shape} = this.state
+        this.setState({
+            shape:{
+                width: shape.width*fontSize,
+                height: shape.height*fontSize
+            }
+        })
+    }
     render() {
         let pos = this.getActualPos()
-        pos.x =  pos.x + 'em'
-        pos.y = pos.y + 'em'
+        let text = this.props.children || 'hello world'
         return(
-            <text {...pos} {...this.props}>this.props.children</text>
+            <text {...pos} ref = {(node)=>{this.node = node}}>{text}</text>
         )
     }
 }
 
-SvgCircle.PropTypes = {
-
-}
-
-export default SvgCircle
+export default SvgText

@@ -58,6 +58,8 @@ import ShoppingMall from './shoppingMall/app/index.jsx'
 import HeightTransition from './heightTransition/heightTransition.jsx'
 import BOM_DOM from './BOM_DOM/BOM_DOM.jsx'
 import LazyLoadWrapper from './lazyLoad/lazyLoadWrapper.jsx'
+import BidirectionalLine from './bidirectionalLine/bidirectionalLine.jsx'
+import SvgShapes from './chart/svgShapes.jsx'
 
 var React_Swipe_Wrapper = ()=>(
     <React_Swipe>
@@ -70,6 +72,7 @@ var React_Swipe_Wrapper = ()=>(
 
 
 var allComponent = {  
+    BidirectionalLine,
     Border1px,
     Bounce,
     BOM_DOM,
@@ -116,6 +119,7 @@ var allComponent = {
     SideBarWrapper,
     SlideShowWrapper,
     Star,
+    SvgShapes,
     Taps,
     ToDos,
     TodosWithRedux,

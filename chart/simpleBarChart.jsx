@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import ChartPanel from './chartPanel/chartPanel.jsx'
 import Bar from './bar/bar.jsx'
 
@@ -18,10 +16,10 @@ class SimpleBarChart extends React.Component {
         }
         this.yAxisData = {
             orientation:'vertical',//horizontal/vertical
-            data:[0,10,30,40,50],
+            data:[0,10,20,30,40,50],
             length:300,
             padding:{
-                begin:25,
+                begin:0,
                 end:5
             }
         }
@@ -46,7 +44,4 @@ class SimpleBarChart extends React.Component {
     }
 }
 
-SimpleBarChart.propTypes = {
-
-}
 export default SimpleBarChart

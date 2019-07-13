@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import './axis.scss';
+import React from 'react'
+import './axis.scss'
 
 class Axis extends React.Component {
     constructor(props){
@@ -15,8 +13,9 @@ class Axis extends React.Component {
             data:['我的','xxxxxx'],
             length:50
         }   
-        if(this.props.data != undefined){
-            this.state = this.props.data
+        let {data} = this.props
+        if(data != undefined){
+            this.state = data
         } 
     }
 
@@ -36,7 +35,8 @@ class Axis extends React.Component {
     }
 
     shouldComponentUpdate(){
-        if(this.state.data == undefined || this.state.data.length == 0 || this.state.data.length == 1){
+        let {data} = this.state
+        if(data == undefined || data.length == 0 || data.length == 1){
             return false;
         }else{
             return true;
@@ -44,42 +44,39 @@ class Axis extends React.Component {
     }
 
     getAxisPathStr(){
-        var axisPathStr = undefined;
+        let axisPathStr = null;
+        let {length,orientation} = this.state
         switch(this.state.orientation){
             case 'horizontal':
                 return (axisPathStr = 'M0,0H' + this.state.length);
-                break;
             case 'vertical':
                 return (axisPathStr = 'M0,0V' + this.state.length);
-                break;
             default:
                 return (axisPathStr = 'M0,0');
-                break;
         }
     }
 
     getCoorTranslateStr(index,paddingBegin,paddingEnd){
-        let translateDistance = index*((this.state.length-paddingBegin-paddingEnd)/(this.state.data.length-1));
+        let {length,data,orientation} = this.state
+        let translateDistance = index*((length-paddingBegin-paddingEnd)/(data.length-1));
         var coordTranslateStr = undefined;
-        switch(this.state.orientation){
+        switch(orientation){
             case 'horizontal':
                 return coordTranslateStr = 'translate(' + (translateDistance+paddingBegin) +',0)';
-                break;
             case 'vertical':
-                return coordTranslateStr = 'translate(0,' + (this.state.length - translateDistance-paddingBegin) +')';
-                break;
+                return coordTranslateStr = 'translate(0,' + (length - translateDistance-paddingBegin) +')';
             default:
                 return coordTranslateStr = 'translate(0,0)';
-                break;
         }
     }
 
     getTextPosition(item){   
-        var textPosition = {x:'0',y:'0'};
+        let textPosition = {x:'0',y:'0'}
+        let {orientation} = this.state
         item = item.toString()
         let itemLength = 0;
         let itemHeight = 0;
-        switch(this.state.orientation){
+        switch(orientation){
             case 'horizontal':
                 itemLength = 0;
                 for(let i=0;i<item.length;i++){
@@ -90,7 +87,6 @@ class Axis extends React.Component {
                     }
                 }
                 return textPosition = {x:((-0.5*itemLength) + 'em'),y:'1.5em'};
-                break;
             case 'vertical':
                 itemLength = 0;
                 itemHeight = 0.5;
@@ -103,10 +99,8 @@ class Axis extends React.Component {
                     }
                 }
                 return textPosition = {x:(-1*itemLength-0.8)+'em',y:(0.5*itemHeight)+'em'};
-                break;
             default:
                 return textPosition = {x:'0',y:'0'};
-                break;
         }
     }
 
@@ -146,7 +140,4 @@ class Axis extends React.Component {
     }
 }
 
-Axis.propTypes = {
-
-}
 export default Axis
