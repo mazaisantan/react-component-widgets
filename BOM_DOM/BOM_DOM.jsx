@@ -25,7 +25,7 @@ class BOM_DOM extends React.Component {
         //返回元素相对于文档document顶部距离
         let elementOffsetTop = this.node.offsetTop
     }
-    clickFunction(evt){
+    clickEvent(evt){
         //点击位置距离当前body可视区域的x，y坐标
         let clientX = evt.clientX || evt.x
         let clientY = evt.clientY || evt.y
@@ -44,13 +44,58 @@ class BOM_DOM extends React.Component {
         let currentTarget = evt.currentTarget
     }
 
-    scrollFunction(){
+    scrollEvent(){
         //该节点的滚动距离
         let scrollTop = this.node.scrollTop
     }
+
+    //记录鼠标按下，鼠标移动，鼠标松开事件
+    mouseEvent(evt){
+        //触发的事件类型
+        let evtType = evt.type
+        switch(evtType){
+            case 'mousedown': {
+                this.mouseDown = true
+                this.mouseDownPos = {
+                    x: evt.clientX || evt.x,//点击位置距离当前body可视区域的x，y坐标
+                    y: evt.clientY || evt.y
+                }
+                //可选的onMouseUp
+                // document.addEventListener("mouseup", ()=>{
+                //     this.mouseDown = false
+                // })
+                break
+            }
+            case 'mousemove': {
+                if(this.mouseDown){
+                    let {x,y} = this.mouseDownPos
+                    //移动的距离
+                    let {cx,cy} = {
+                        cx: evt.clientX - x,
+                        cy: evt.clientY - y
+                    }
+                    return {cx,cy}
+                }
+                break
+            }
+            //这种方式有弊端，必须在监听区域松开才能触发
+            case 'mouseup': {
+                this.mouseDown = false
+                break
+            }
+            default:
+                break
+        }
+    }
     render() {
         return (
-            <div className="bom-dom-container" ref={node=>{this.node = node}} onClick={this.clickFunction.bind(this)} onScroll={this.scrollFunction.bind(this)}>
+            <div className="bom-dom-container" ref={node=>{this.node = node}} 
+                onClick={this.clickEvent.bind(this)}
+                onScroll={this.scrollEvent.bind(this)}
+                onMouseDown={this.mouseEvent.bind(this)}
+                onMouseMove={this.mouseEvent.bind(this)}
+                onMouseUp={this.mouseEvent.bind(this)}
+                >
             </div>
         )
     }

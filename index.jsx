@@ -60,6 +60,7 @@ import BOM_DOM from './BOM_DOM/BOM_DOM.jsx'
 import LazyLoadWrapper from './lazyLoad/lazyLoadWrapper.jsx'
 import BidirectionalLine from './bidirectionalLine/bidirectionalLine.jsx'
 import SvgShapes from './chart/svgShapes.jsx'
+import cubicBezier from './cubicBezier/cubicBezier.jsx'
 
 var React_Swipe_Wrapper = ()=>(
     <React_Swipe>
@@ -80,6 +81,7 @@ var allComponent = {
     Category,
     ColorGradient,
     Colors,
+    cubicBezier,
     curveLinePath,
     Dropdown,
     OrientationExamples,

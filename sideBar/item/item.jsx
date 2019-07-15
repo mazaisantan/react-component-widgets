@@ -14,9 +14,25 @@ class Item extends React.Component {
         }
         this.cursorStyle = {cursor:this.props.children?'pointer':'default'}      
     }
-    foldItemContent(){
-        this.setState({folderState:this.state.folderState == 'unfolded'? 'folded':'unfolded'})
+
+    componentDidMount(){
+        this.height = this.node.getBoundingClientRect().height
     }
+
+    foldItemContent(){
+        let {folderState} = this.state
+        let style = this.node.style
+        if(folderState == 'unfolded'){
+            this.setState({folderState:'folded'})
+            style.marginTop = (-this.height)+'px'
+            //如果使用relative布局，会有占位，无法收缩
+            //但是用margin重叠时无法遮挡
+        }else{
+            this.setState({folderState:'unfolded'})
+            style.marginTop = 0
+        }
+    }
+
     render() {
         {
             var itemTitleWrapper= (title,type,folderState)=>{
@@ -34,13 +50,17 @@ class Item extends React.Component {
                 )
             }
         }
+        let {type,folderState} = this.state
+        let {title} = this.props
         return (
             <div className={'item-container'}>
                 <div className='item-title'  onClick={this.foldItemContent.bind(this)} style={this.cursorStyle}>
-                    {itemTitleWrapper(this.props.title,this.state.type,this.state.folderState)}
+                    {itemTitleWrapper(title,type,folderState)}
                 </div>
-                <div className={'item-content ' + this.state.folderState}>
-                    {this.props.children}
+                <div className={'item-content ' + folderState}>
+                    <div ref={(node)=>{this.node = node}}>
+                         {this.props.children}
+                    </div>
                 </div>
             </div>
         )
