@@ -1,18 +1,15 @@
+# Components
 
-Demo1
-==========
+React组件库编写练习。	
 
-新建一个React项目,内容为HelloWorld，构建工具：Webpack。
+## Requirements
 
-# 开始
-# 步骤：
+- Node.js 10.16.0
+- Npm 6.9.0
 
-### 1.编译
+## Run locally for development
 
-`$ npm install`
+- `$ npm install` - 安装所有依赖
+- `$ npm start` - 运行项目
 
-`$ npm run start`
-
-### 2.运行
-
-输入网址：http://localhost:8088/
+打开浏览器，输入: http://localhost:8088/

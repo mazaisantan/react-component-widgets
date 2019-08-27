@@ -5,12 +5,18 @@ class cubicBezier extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            shape:[200,200],//0,1分别为width，height
+            shape:[236,206],//0,1分别为width，height
             data:[
                 [0,200,190,10],//四个点，0，1，3，4分别为x1,y1,x2,y2
                 [0,100,100,10],//四个点，0，1，3，4分别为x1,y1,x2,y2
                 [0,100,100,100],//四个点，0，1，3，4分别为x1,y1,x2,y2
                 [0,100,200,100],//四个点，0，1，3，4分别为x1,y1,x2,y2
+            ],
+            radio:[
+                [0.2,0.2,0,1],//四个点，0，1，3，4分别为x1,y1,x2,y2//x1,y1为起始点，x2,y2为结束点
+                [0.1,0,0.1,1],//四个点，0，1，3，4分别为x1,y1,x2,y2//x1,y1为起始点，x2,y2为结束点
+                [0,0,1,1],//四个点，0，1，3，4分别为x1,y1,x2,y2//x1,y1为起始点，x2,y2为结束点
+                [0.25,0,1,1],//四个点，0，1，3，4分别为x1,y1,x2,y2//x1,y1为起始点，x2,y2为结束点
             ]
         }     
     }
@@ -58,9 +64,14 @@ class cubicBezier extends React.Component {
                         curX: circleX + cx,
                         curY: circleY + cy
                     }
-                    console.log(i)
-                    console.log(j)
-                    if(curX > shape[0] || curY > shape[1] || curX < 0 || curY < 0)return
+                    console.log(curX)
+                    console.log(curY)
+                    if(curX > shape[0] || curY > shape[1] || curX < 0 || curY < 0){
+                        curX = curX > shape[0] ? shape[0] : curX
+                        curY = curY > shape[1] ? shape[1] : curY
+                        curX = curX < 0 ? 0 : curX
+                        curY = curY < 0 ? 0 : curY
+                    }
                     targetData.splice(j,1,curX)
                     targetData.splice(j+1,1,curY)
                     this.setState({})   
@@ -73,11 +84,11 @@ class cubicBezier extends React.Component {
     }
 
     render() {
-        let {shape,data} = this.state
+        let {shape,data,radio} = this.state
         return (
             <div className="cubic-bezier-container">{
                 data.map((item,i)=>{
-                    let d = 'M 0 '+shape[0]+' C '+item[0]+' '+item[1]+','+item[2]+' '+item[3]+', '+shape[1]+' 0'
+                    let d = 'M '+radio[i][0]*shape[0]+' '+radio[i][1]*shape[1]+' C '+item[0]+' '+item[1]+','+item[2]+' '+item[3]+', '+radio[i][2]*shape[0]+' '+radio[i][3]*shape[1]
                     return (
                         <div style={{display:'inline-block'}}>
                             <svg width={shape[0]} height={shape[1]}

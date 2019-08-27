@@ -97,7 +97,14 @@ module.exports = {
             # npm install --save-dev babel-preset-react
             */
             {test: /\.(js|jsx)?$/,
-            loader:"babel-loader?{'presets':['babel-preset-es2015','react']}"},//方式一
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: ['@babel/preset-env']
+                  }
+                }
+            },//方式一
             //loader: 'babel-loader?presets[]=babel-preset-es2015,presets[]=babel-preset-stage-0,presets[]=react'},//方式二
 
 

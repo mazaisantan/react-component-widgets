@@ -22,6 +22,17 @@
     }
 }
 
+@keyframes hover {
+    0% { 
+        box-shadow: none;
+        transform:translate(0,0);
+    }
+    50% { 
+        box-shadow: 0 10px 10px rgba(0,0,0,.5);
+        transform:translate(0,-5px);
+    }
+}
+
 .bounce-container{
     padding-left:2px;
     min-height:450px;
@@ -62,6 +73,8 @@
             -webkit-animation: bounce 2s infinite ease-in-out 0s;
         }
     }
-    
+    .button-hover{
+        animation: hover 1s infinite ease-in-out 0s;   
+    }
 }
 

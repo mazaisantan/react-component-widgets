@@ -5,7 +5,7 @@ class Bounce extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            animationName:["ball-shake","ball-drop","ball-bounce"]
+            animationName:["ball-shake","ball-drop","ball-bounce","button-hover"]
         }   
     }
     render() {

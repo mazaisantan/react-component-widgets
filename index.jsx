@@ -61,6 +61,9 @@ import LazyLoadWrapper from './lazyLoad/lazyLoadWrapper.jsx'
 import BidirectionalLine from './bidirectionalLine/bidirectionalLine.jsx'
 import SvgShapes from './chart/svgShapes.jsx'
 import cubicBezier from './cubicBezier/cubicBezier.jsx'
+import SearchBar from './SearchBar/index.jsx'
+import SearchPageFilter from './SearchPageFilter/index.jsx'
+import TracksTree from './TracksTree/index.jsx'
 
 var React_Swipe_Wrapper = ()=>(
     <React_Swipe>
@@ -104,6 +107,8 @@ var allComponent = {
     ProfileCard,
     React_Swipe_Wrapper,
     RippleButton,
+    SearchBar,
+    SearchPageFilter,
     ScrollToTop,
     ScrollLoading,
     ShoppingCart,
@@ -125,6 +130,7 @@ var allComponent = {
     Taps,
     ToDos,
     TodosWithRedux,
+    TracksTree,
     TreeView,
     WaitCircle,
     XiaoMiMobile,

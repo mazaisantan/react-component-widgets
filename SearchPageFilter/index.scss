@@ -1,0 +1,306 @@
+.search-filter-container{
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    width: 647px;
+    height: 230px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
+    .wrapper{
+        flex: 1;
+    }
+    .tags-group{
+        position: relative;
+        align-items: center;
+        border-radius: 5px;
+        box-sizing: content-box;
+        font-size: 0px;
+        display:block;
+        display: flex;
+        padding-left: 13px;
+        background-color: transparent;
+        flex-shrink: 0;//默认为1，会导致塌陷
+        background-color: transparent;
+        &>.wrapper{
+            position: absolute;
+            font-size: 0px;
+            height: 8px;
+            line-height: 8px;
+            z-index: 1;
+            left:6px;
+            top:-4px;
+            &>label{
+                display: block;
+                padding: 0px 6px;
+                background-color: white;
+                color: #999999;
+                line-height: 8px;
+                font-size: 8px;
+            }
+        }
+        input{
+            box-sizing: border-box;
+            z-index: 1;
+            flex: 1;
+            outline: none;
+            border: 0px;
+            padding: 1px 0;
+            background-color: transparent;
+            border-radius: 5px;
+            line-height: 45px;
+            &:focus{
+                outline: none;
+                border: 0px;
+            }
+        }
+        &:after{
+            content:'';
+            position: absolute;
+            box-sizing: content-box;
+            border-radius: 10px;
+            z-index: 0;
+            border:1px solid #999999;
+            width:200%;
+            height:200%;
+            left:0;
+            top:0;
+            transform-origin: left top;//如果没有这句，圆心为50%width，50%height
+            transform:scale(0.5);
+        }
+        .tag-item{
+            background-color: #E9E9E9;
+            z-index: 1;
+            display: inline-flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 25px;
+            padding: 0 5px;
+            box-sizing: border-box;
+            border-radius: 11px;
+            line-height: 25px;
+            margin-right: 12px;
+            &>span:first-child{
+                font-size: 13px;
+                color: #868686;
+                margin: 5px;
+            }
+            &>span:last-child{
+                cursor: pointer;
+                display: inline-block;
+                font-size: 8px;
+                padding: 0 4px;
+                border-radius: 4px;
+                line-height: 12px;
+                height: 12px;
+                color: #C3C3C8;
+            }
+        }
+    }
+    .author-group{
+        display: inline-flex;
+        width: 190px;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        line-height:32px;
+        position: relative;
+        border-radius: 5px;
+        margin-top: 28px;
+        padding-left: 13px;
+        vertical-align: top;
+        &>.wrapper{
+            position: absolute;
+            z-index: 1;
+            font-size: 0px;
+            height: 8px;
+            line-height: 8px;
+            left:6px;
+            top:-4px;
+            label{
+                display: block;
+                padding: 0px 6px;
+                background-color: white;
+                color: #999999;
+                line-height: 8px;
+                font-size: 8px;
+            }
+        }
+        &>span{
+            font-size: 13px;
+            z-index: 1;
+        }
+        &>img{
+            margin-right: 2px;
+            width:28px;
+            height:28px;
+            cursor: pointer;
+            z-index: 1;
+            &:focus{
+                border:0;
+                outline: none;
+            }
+        }
+        &:after{
+            content:'';
+            position: absolute;
+            box-sizing: border-box;
+            border-radius: 10px;
+            z-index: 0;
+            border:1px solid #999999;
+            width:200%;
+            height:200%;
+            left:0;
+            top:0;
+            transform-origin: left top;//如果没有这句，圆心为50%width，50%height
+            transform:scale(0.5);
+        }
+        .dropdown-content{
+            display: block;
+            position: absolute;
+            left: 0px;
+            top: 32px;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            a{
+                color: black;
+                padding: 5px 16px;
+                text-decoration: none;
+                display: block;
+                &:hover{
+                    background-color: #f1f1f1
+                }
+            }
+        }
+        .dropdown-content.disable{
+            display: none;
+        }
+    }
+    .date-group{
+        vertical-align: top;
+        display: inline-flex;
+        width: 208px;
+        justify-content: space-between;
+        align-items: center;
+        line-height:32px;
+        height: 32px;
+        position: relative;
+        border-radius: 5px;
+        margin-left: 18px;
+        margin-top: 28px;
+        >img{
+            z-index: 1;
+            margin-left: 2px;
+            width:20px;
+            height:20px;
+        }
+        .date-picker {    
+            display: flex;
+            z-index: 1;
+            align-items: center;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            padding: 0;
+            margin: 0;
+            border: none;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            input{
+                font: 400 13.3333px Arial !important;
+                padding: 0 !important;
+                line-height: 1 !important;
+                border: 0px !important;
+                padding-left: 15px !important;
+                width: 100% !important;
+                background-color: transparent;
+            }
+            .DateInput{
+                width: 80% !important;
+                height: 22px !important;
+                margin-left: 12px !important;
+            }
+            .SingleDatePickerInput{
+                height: 22px !important;
+                display: flex !important;
+                align-items: center !important;
+                background-color: transparent !important;
+                >div{
+                    background-color: transparent !important;
+                }
+            }
+            .SingleDatePickerInput__withBorder{
+                border: 0px !important;
+            }
+        }
+        &>.wrapper{
+            position: absolute;
+            z-index: 1;
+            font-size: 13px;
+            height: 8px;
+            line-height: 8px;
+            left:6px;
+            top:-4px;
+            label{
+                display: block;
+                padding: 0px 6px;
+                background-color: white;
+                color: #999999;
+                line-height: 8px;
+                font-size: 8px;
+            }
+        }
+        &:after{
+            content:'';
+            position: absolute;
+            box-sizing: border-box;
+            border-radius: 10px;
+            z-index: 0;
+            border:1px solid #999999;
+            width:200%;
+            height:200%;
+            left:0;
+            top:0;
+            transform-origin: left top;//如果没有这句，圆心为50%width，50%height
+            transform:scale(0.5);
+        }
+    }
+    .reset{
+        display: inline-block;
+        width: 75px;
+        border:1px solid #137D60;
+        border-radius: 15px;
+        line-height: 34px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #137D60;
+        background-color: white;
+        outline: none;
+    }
+    .apply-filter{
+        display: inline-block;
+        width: 118px;
+        background-color: #137D60;
+        line-height: 34px;
+        margin-left: 12px;
+        font-size: 13px;
+        border-radius: 15px;
+        font-weight: bold;
+        color: white;
+        border:1px solid #137D60;
+        outline: none;
+    }
+}
+.SingleDatePicker{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    width: 208px;
+    height: 32px;
+}
+.search-filter-container *{
+    box-sizing: content-box !important;
+}
