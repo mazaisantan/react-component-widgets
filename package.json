@@ -55,7 +55,7 @@
     "koa-router": "^5.4.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "open-browser-webpack-plugin": "0.0.2",
     "postcss-loader": "^0.11.0",
     "react": "^16.0.0",
